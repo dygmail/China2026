@@ -563,6 +563,17 @@
     padding: 16px;
   }
   .ext-body.open { display: block; }
+
+  .countdown-badge {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    white-space: nowrap;
+  }
+  .countdown-badge strong {
+    font-weight: 600;
+    color: #f5d98a;
+  }
 </style>
 </head>
 <body>
@@ -582,6 +593,8 @@
       <span>📍 Beidahu · Jilin · Beijing</span>
       <span style="opacity:0.4">|</span>
       <span>👨‍👩‍👧‍👦 6 Families</span>
+      <span style="opacity:0.4">|</span>
+      <span class="countdown-badge">⏱ <strong id="countdown-display"></strong></span>
     </div>
 
     <!-- Mountain illustration -->
@@ -1538,7 +1551,21 @@ document.addEventListener('DOMContentLoaded', function() {
     body.classList.add('open');
     tag.textContent = '▴';
   });
+  updateCountdown();
 });
+
+function updateCountdown() {
+  const target = new Date(2026, 11, 2);
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) { document.getElementById('countdown-display').textContent = 'We\'re here! 🎉'; return; }
+  const totalDays = Math.floor(diff / 86400000);
+  let months = (target.getFullYear() - now.getFullYear()) * 12 + target.getMonth() - now.getMonth();
+  if (now.getDate() > target.getDate()) months--;
+  const weeks = Math.floor(totalDays / 7);
+  const days = totalDays % 7;
+  document.getElementById('countdown-display').textContent = months + 'mo / ' + weeks + 'w / ' + totalDays + 'd';
+}
 
 function toggleExtended(header) {
   const body = header.nextElementSibling;
