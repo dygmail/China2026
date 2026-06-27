@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China 2026 — Winter Group Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ice-deep: #0a1628;
+    --ice-navy: #0d1f3c;
+    --ice-mid: #1a3a6b;
+    --ice-blue: #2563a8;
+    --frost: #c8dff5;
+    --frost-light: #e8f3ff;
+    --snow: #f0f6ff;
+    --snow-white: #ffffff;
+    --gold: #c9923a;
+    --gold-light: #f0c87a;
+    --pine: #1a4a2e;
+    --pine-mid: #2d7a4a;
+    --pine-light: #e6f5ec;
+    --text-on-dark: #e8f0fc;
+    --text-muted-dark: #8aa8cc;
+    --text-on-light: #0d1f3c;
+    --text-muted-light: #4a6080;
+    --danger: #c0392b;
+    --tbc: #7c5c2a;
+    --tbc-bg: #fdf3e3;
+    --confirmed: #1a6b3c;
+    --confirmed-bg: #e6f5ec;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--ice-deep);
+    color: var(--text-on-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* === SNOWFLAKES === */
+  .snowflakes {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .snowflake {
+    position: absolute;
+    top: -20px;
+    color: rgba(200, 223, 245, 0.4);
+    font-size: 1.2em;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* === LAYOUT === */
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  /* === HERO === */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--snow-white);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 20px rgba(37,99,168,0.4);
+  }
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--frost);
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+  .hero-dates {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(200,223,245,0.2);
+    border-radius: var(--radius-lg);
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    color: var(--frost);
+  }
+  .mountain-svg {
+    width: 100%;
+    max-width: 600px;
+    margin: 24px auto 0;
+    display: block;
+    opacity: 0.85;
+  }
+
+  /* === SECTION TITLES === */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--snow-white);
+    margin: 48px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(200,223,245,0.3), transparent);
+  }
+  .section-icon {
+    width: 32px; height: 32px;
+    background: var(--ice-mid);
+    border: 1px solid rgba(200,223,245,0.25);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* === FAMILY GRID === */
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .family-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,223,245,0.15);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .family-card:hover { border-color: rgba(200,223,245,0.35); }
+  .family-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--snow-white);
+    margin-bottom: 4px;
+  }
+  .family-members {
+    font-size: 0.8rem;
+    color: var(--text-muted-dark);
+    margin-bottom: 10px;
+  }
+  .flight-badge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .flight-out { background: rgba(37,99,168,0.25); color: #93c5fd; border: 1px solid rgba(37,99,168,0.4); }
+  .flight-ret { background: rgba(37,99,168,0.15); color: #7ab8e8; border: 1px solid rgba(37,99,168,0.3); }
+  .tbc-badge { background: rgba(201,146,58,0.15); color: var(--gold-light); border: 1px solid rgba(201,146,58,0.3); }
+  .gift-badge {
+    position: absolute;
+    top: 12px; right: 12px;
+    font-size: 0.65rem;
+    background: rgba(26,74,46,0.4);
+    color: #6ee79a;
+    border: 1px solid rgba(26,106,64,0.4);
+    border-radius: 20px;
+    padding: 2px 8px;
+  }
+  .room-info {
+    font-size: 0.75rem;
+    color: var(--text-muted-dark);
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .room-pill {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(200,223,245,0.15);
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    color: var(--frost);
+  }
+
+  /* === TIMELINE === */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--ice-blue), rgba(37,99,168,0.1));
+  }
+  .timeline-day {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .day-dot {
+    position: absolute;
+    left: -28px;
+    top: 14px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--ice-blue);
+    background: var(--ice-deep);
+    z-index: 1;
+  }
+  .day-dot.highlight { background: var(--gold); border-color: var(--gold); }
+  .day-dot.clubmed { background: var(--pine-mid); border-color: var(--pine-mid); }
+  .day-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,223,245,0.12);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .day-card:hover { border-color: rgba(200,223,245,0.28); }
+  .day-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .day-header:hover { background: rgba(255,255,255,0.03); }
+  .day-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted-dark);
+    min-width: 56px;
+  }
+  .day-date {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--snow-white);
+    flex: 1;
+  }
+  .day-location {
+    font-size: 0.8rem;
+    color: var(--frost);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .loc-icon { font-size: 0.75rem; opacity: 0.7; }
+
+  .day-body {
+    padding: 0 16px 14px;
+    display: none;
+    border-top: 1px solid rgba(200,223,245,0.08);
+  }
+  .day-body.open { display: block; }
+  .day-body-inner { padding-top: 12px; }
+
+  .event-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .event-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .event-time {
+    font-size: 0.72rem;
+    color: var(--text-muted-dark);
+    min-width: 46px;
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .event-text {
+    font-size: 0.85rem;
+    color: var(--text-on-dark);
+    line-height: 1.5;
+  }
+  .event-text strong { color: var(--snow-white); font-weight: 500; }
+
+  .day-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: default;
+  }
+  .pill-blue { background: rgba(37,99,168,0.2); color: #93c5fd; border: 1px solid rgba(37,99,168,0.35); }
+  .pill-green { background: rgba(26,106,64,0.2); color: #6ee79a; border: 1px solid rgba(26,106,64,0.35); }
+  .pill-gold { background: rgba(201,146,58,0.15); color: var(--gold-light); border: 1px solid rgba(201,146,58,0.3); }
+  .pill-tbc { background: rgba(201,146,58,0.08); color: #c9a15a; border: 1px dashed rgba(201,146,58,0.35); }
+  .pill-purple { background: rgba(83,74,183,0.2); color: #c4b5fd; border: 1px solid rgba(83,74,183,0.35); }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ice-navy);
+    border: 1px solid rgba(200,223,245,0.25);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    color: var(--frost);
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    line-height: 1.6;
+    text-align: left;
+    min-width: 180px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(200,223,245,0.25);
+  }
+  .pill:hover .tooltip { display: block; }
+
+  /* === CLUBMED BLOCK === */
+  .clubmed-block {
+    background: linear-gradient(135deg, rgba(26,74,46,0.3) 0%, rgba(10,22,40,0.5) 100%);
+    border: 1px solid rgba(45,122,74,0.4);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    margin-top: 16px;
+  }
+  .clubmed-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #6ee79a;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .amenity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    color: var(--text-muted-dark);
+  }
+  .amenity-dot { width: 5px; height: 5px; background: var(--pine-mid); border-radius: 50%; flex-shrink: 0; }
+
+  /* === GIFTS BOX === */
+  .gifts-box {
+    background: rgba(201,146,58,0.08);
+    border: 1px solid rgba(201,146,58,0.25);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .gifts-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .gifts-text h3 { font-size: 0.9rem; font-weight: 600; color: var(--gold-light); margin-bottom: 4px; }
+  .gifts-text p { font-size: 0.8rem; color: var(--text-muted-dark); line-height: 1.6; }
+
+  /* === COST TABLE === */
+  .cost-section {
+    overflow-x: auto;
+  }
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .cost-table th {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-muted-dark);
+    border-bottom: 1px solid rgba(200,223,245,0.12);
+  }
+  .cost-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(200,223,245,0.06);
+    color: var(--text-on-dark);
+    vertical-align: top;
+  }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .cost-amt { color: var(--gold-light); font-weight: 500; white-space: nowrap; }
+  .cost-note { font-size: 0.72rem; color: var(--text-muted-dark); margin-top: 2px; }
+  .tbc-text { color: #c9a15a; font-style: italic; }
+
+  /* === CHECKLIST === */
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,223,245,0.1);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+  .check-icon { font-size: 1rem; flex-shrink: 0; }
+  .check-label { color: var(--text-on-dark); }
+  .check-done { border-color: rgba(26,106,64,0.35); }
+  .check-done .check-label { color: #6ee79a; }
+  .check-pending { border-color: rgba(201,146,58,0.2); }
+  .check-pending .check-label { color: var(--gold-light); }
+
+  /* === FOOTER === */
+  .footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    font-size: 0.75rem;
+    color: var(--text-muted-dark);
+    border-top: 1px solid rgba(200,223,245,0.1);
+    margin-top: 48px;
+  }
+  .footer strong { color: var(--frost); }
+
+  /* === WEATHER STRIP === */
+  .weather-strip {
+    background: rgba(37,99,168,0.12);
+    border: 1px solid rgba(37,99,168,0.25);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+  .weather-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .weather-label { font-size: 0.7rem; color: var(--text-muted-dark); }
+  .weather-val { font-size: 0.9rem; font-weight: 500; color: var(--frost); }
+
+  /* === ALL-MEET BANNER === */
+  .all-meet-banner {
+    background: linear-gradient(135deg, rgba(26,74,46,0.4) 0%, rgba(37,99,168,0.25) 100%);
+    border: 1px solid rgba(45,122,74,0.5);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .all-meet-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #6ee79a;
+    margin-bottom: 6px;
+  }
+  .all-meet-banner p { font-size: 0.85rem; color: var(--text-muted-dark); }
+
+  .open-tag {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--text-muted-dark);
+    transition: color 0.2s;
+  }
+  .day-header:hover .open-tag { color: var(--frost); }
+
+  .trip-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+  }
+  .badge-clubmed { background: rgba(26,74,46,0.5); color: #6ee79a; border: 1px solid rgba(26,106,64,0.4); }
+  .badge-travel { background: rgba(37,99,168,0.3); color: #93c5fd; border: 1px solid rgba(37,99,168,0.4); }
+  .badge-explore { background: rgba(83,74,183,0.25); color: #c4b5fd; border: 1px solid rgba(83,74,183,0.35); }
+</style>
+</head>
+<body>
+
+<div class="snowflakes" aria-hidden="true" id="snowflakes"></div>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-eyebrow">Group Family Trip · December 2026</p>
+    <h1>China 2026 ❄️</h1>
+    <p class="hero-sub">Ski, snow &amp; 东北 adventures</p>
+    <div class="hero-dates">
+      <span>✈ 2 Dec — 14 Dec 2026</span>
+      <span style="opacity:0.4">|</span>
+      <span>📍 Beidahu · Jilin · Beijing</span>
+      <span style="opacity:0.4">|</span>
+      <span>👨‍👩‍👧‍👦 6 Families</span>
+    </div>
+
+    <!-- Mountain illustration -->
+    <svg class="mountain-svg" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1628" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#0a1628" stop-opacity="0.3"/>
+        </linearGradient>
+      </defs>
+      <!-- distant mountains -->
+      <polygon points="0,160 80,60 160,110 220,50 300,100 380,40 460,90 540,45 600,80 600,160" fill="#0d1f3c" opacity="0.8"/>
+      <!-- mid mountains -->
+      <polygon points="0,160 60,90 130,130 200,75 280,120 360,65 440,110 520,60 600,95 600,160" fill="#1a3a6b" opacity="0.7"/>
+      <!-- foreground slopes -->
+      <polygon points="0,160 100,110 200,145 300,100 400,140 500,105 600,130 600,160" fill="#0d2545" opacity="0.9"/>
+      <!-- snow caps -->
+      <polygon points="200,75 220,55 240,75" fill="rgba(240,246,255,0.6)"/>
+      <polygon points="360,65 380,40 400,65" fill="rgba(240,246,255,0.7)"/>
+      <polygon points="520,60 540,42 560,60" fill="rgba(240,246,255,0.5)"/>
+      <!-- pine trees foreground -->
+      <g fill="#1a4a2e" opacity="0.8">
+        <polygon points="30,160 35,138 40,160"/>
+        <polygon points="55,160 61,140 67,160"/>
+        <polygon points="530,160 535,142 540,160"/>
+        <polygon points="555,160 561,138 567,160"/>
+        <polygon points="570,160 576,144 582,160"/>
+      </g>
+      <!-- ski figure hint -->
+      <circle cx="300" cy="96" r="3" fill="rgba(200,223,245,0.6)"/>
+      <line x1="300" y1="99" x2="296" y2="112" stroke="rgba(200,223,245,0.5)" stroke-width="1.5"/>
+      <line x1="300" y1="102" x2="306" y2="110" stroke="rgba(200,223,245,0.5)" stroke-width="1"/>
+      <line x1="296" y1="112" x2="290" y2="116" stroke="rgba(200,223,245,0.5)" stroke-width="1"/>
+      <line x1="296" y1="112" x2="302" y2="116" stroke="rgba(200,223,245,0.5)" stroke-width="1"/>
+      <rect x="0" y="0" width="600" height="160" fill="url(#skyGrad)"/>
+    </svg>
+  </div>
+
+  <!-- ALL MEET BANNER -->
+  <div class="all-meet-banner">
+    <h3>🎿 All 6 families meet at Club Med Beidahu</h3>
+    <p>Check-in 3 Dec (from 15:00) · Check-out 7 Dec (by 10:00) · Booked via Chan Brothers</p>
+  </div>
+
+  <!-- FAMILIES -->
+  <h2 class="section-title"><span class="section-icon">👨‍👩‍👧</span> The Families</h2>
+  <div class="family-grid">
+
+    <div class="family-card">
+      <span class="gift-badge">🎁 Gift collected</span>
+      <div class="family-name">David &amp; Joelle Soh</div>
+      <div class="family-members">2 adults · 2 teens</div>
+      <div class="flight-badge flight-out">✈ CZ353 · 2 Dec · SIN→CAN 08:00</div><br>
+      <div class="flight-badge flight-out">✈ CZ6342 · CAN→CGQ · arr 18:05</div><br>
+      <div class="flight-badge flight-ret">✈ CZ3914 · 13 Dec · HRB→CAN 16:00</div><br>
+      <div class="flight-badge flight-ret">✈ CZ8489 · CAN→SIN dep 22:40</div>
+      <div class="room-info">
+        <span class="room-pill">2× Deluxe King</span>
+        <span style="color:var(--text-muted-dark);">Chan Brothers</span>
+      </div>
+      <div class="room-info" style="margin-top:4px;">
+        <span style="color:#6ee79a; font-size:0.72rem;">📦 Gift holder (beanies + gloves)</span>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <span class="gift-badge">🎁 Gift collected</span>
+      <div class="family-name">Kevin &amp; Trina Ong</div>
+      <div class="family-members">2 adults · 2 kids</div>
+      <div class="flight-badge flight-out">✈ CZ353 · 2 Dec · SIN→CAN 08:00 (same as David/Joelle)</div><br>
+      <div class="flight-badge flight-out">✈ CZ6342 · CAN→CGQ · arr 18:05</div><br>
+      <div class="flight-badge flight-ret">✈ Return booked · dates TBC</div>
+      <div class="room-info">
+        <span class="room-pill">Family Deluxe</span>
+        <span style="color:var(--text-muted-dark);">Chan Brothers</span>
+      </div>
+      <div class="room-info" style="margin-top:4px;">
+        <span style="color:#6ee79a; font-size:0.72rem;">📦 Gift distributor for group</span>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <div class="family-name">Jason &amp; Wei Wei Hwang</div>
+      <div class="family-members">2 adults · 2 kids</div>
+      <div class="flight-badge flight-out">✈ CZ353 · 2 Dec · SIN→CAN 08:00</div><br>
+      <div class="flight-badge flight-out">✈ CZ6342 · CAN→CGQ · arr 18:05</div><br>
+      <div class="flight-badge flight-ret">✈ Return TBC</div>
+      <div class="room-info">
+        <span class="room-pill">Family Deluxe</span>
+        <span style="color:var(--text-muted-dark);">Chan Brothers</span>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <div class="family-name">John &amp; Celine Tham</div>
+      <div class="family-members">3 adults · 2 kids</div>
+      <div class="flight-badge flight-out">✈ CZ353 · 2 Dec · SIN→CAN 08:00 (same group)</div><br>
+      <div class="flight-badge flight-out">✈ CZ6342 · CAN→CGQ · arr 18:05</div><br>
+      <div class="flight-badge flight-ret">✈ Return TBC</div>
+
+    <div class="family-card">
+      <div class="family-name">Ronald &amp; Jovelle Choong</div>
+      <div class="family-members">2 adults · 2 kids (12 &amp; 15)</div>
+      <div class="flight-badge flight-out">✈ CZ353 · 2 Dec · SIN→CAN 08:00 (same as David/Kevin)</div><br>
+      <div class="flight-badge flight-out">✈ CZ6342 · CAN→CGQ · arr 18:05</div><br>
+      <div class="flight-badge flight-ret">✈ Depart 14 Dec · 08:45</div>
+      <div class="room-info">
+        <span class="room-pill">2× Deluxe King</span>
+        <span style="color:var(--text-muted-dark);">Chan Brothers</span>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <div class="family-name">Bra &amp; Tricia Tham</div>
+      <div class="family-members">2 adults</div>
+      <div class="flight-badge tbc-badge">⏳ Flights not booked yet</div>
+      <div class="room-info" style="margin-top:8px;">
+        <span class="room-pill">1× Deluxe King</span>
+        <span style="color:var(--text-muted-dark);">Chan Brothers</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WEATHER -->
+  <h2 class="section-title"><span class="section-icon">🌡</span> What to expect</h2>
+  <div class="weather-strip">
+    <div class="weather-item">
+      <span class="weather-label">Beidahu temp (Dec)</span>
+      <span class="weather-val">−15°C to −5°C</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-label">Jilin / Changchun</span>
+      <span class="weather-val">−18°C to −8°C</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-label">Beijing (Dec)</span>
+      <span class="weather-val">−5°C to 3°C</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-label">Snow coverage</span>
+      <span class="weather-val">Excellent ❄️</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-label">Rime ice (Jilin)</span>
+      <span class="weather-val">Peak season 🌫</span>
+    </div>
+  </div>
+
+  <!-- GROUP AIRPORT TRANSFER -->
+  <h2 class="section-title"><span class="section-icon">🚌</span> Group airport transfer</h2>
+
+  <div class="clubmed-block" style="border-color:rgba(37,99,168,0.4); background: linear-gradient(135deg, rgba(37,99,168,0.15) 0%, rgba(10,22,40,0.5) 100%);">
+    <h3 style="color:#93c5fd;">🛬 Dec 2 arrivals — 5 families · 18 pax · 60–80 large suitcases</h3>
+    <p style="font-size:0.82rem; color:var(--text-muted-dark); margin-bottom:14px;">
+      David/Joelle (4), Kevin/Trina (4), Ronald/Jovelle (4), Jason/WeiWei (4) and John/Celine (5)
+      all land CGQ ~18:05 on CZ6342. With <strong>3–4 large suitcases per family</strong>,
+      you'll need substantial cargo space. Ski gear is rented at Club Med.
+    </p>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap:12px; margin-bottom:14px;">
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-sm); padding:12px;">
+        <div style="font-size:0.72rem; color:var(--text-muted-dark); margin-bottom:4px;">Option A — 3× 7-seat MPVs (recommended)</div>
+        <div style="font-size:0.9rem; color:var(--snow-white); font-weight:500;">Price: ¥1,500–2,100 total (~S$280–390)</div>
+        <div style="font-size:0.8rem; color:var(--frost); margin-top:4px;">~¥300–420 per family · 2 hrs door-to-door</div>
+        <div style="font-size:0.72rem; color:var(--text-muted-dark); margin-top:4px;">Each MPV fits 6 pax + luggage in cabin &amp; boot. 2–3 families share each vehicle. Flexible, fast, no waiting.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-sm); padding:12px;">
+        <div style="font-size:0.72rem; color:var(--text-muted-dark); margin-bottom:4px;">Option B — Single 30-seat coach (whole group)</div>
+        <div style="font-size:0.9rem; color:var(--snow-white); font-weight:500;">Price: ¥1,600–2,200 (~S$295–410)</div>
+        <div style="font-size:0.8rem; color:var(--frost); margin-top:4px;">~¥320–440 per family</div>
+        <div style="font-size:0.72rem; color:var(--text-muted-dark); margin-top:4px;">Large cargo hold fits all 60–80 bags. Everyone rides together. Book via China agent or Trip.com.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-sm); padding:12px;">
+        <div style="font-size:0.72rem; color:var(--text-muted-dark); margin-bottom:4px;">Option C — Individual Didi (per family)</div>
+        <div style="font-size:0.9rem; color:var(--snow-white); font-weight:500;">Price: ~¥200–300 per car</div>
+        <div style="font-size:0.8rem; color:var(--frost); margin-top:4px;">~¥60–75/pax</div>
+        <div style="font-size:0.72rem; color:var(--text-muted-dark); margin-top:4px;">Simplest — each family orders their own Didi at CGQ arrivals. 7-seat Didi Plus recommended for families with 4+ bags.</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(201,146,58,0.1); border:1px solid rgba(201,146,58,0.25); border-radius:var(--radius-sm); padding:12px; font-size:0.8rem;">
+      <span style="color:var(--gold-light); font-weight:500;">💡 Recommended: Option A — Three 7-seat MPVs via Trip.com</span>
+      <span style="color:var(--text-muted-dark);"> Book "CGQ Airport → Club Med Beidahu" (3 vehicles) in the Trip.com app. English interface, free cancellation up to 24h. Alternatively ask <strong style="color:var(--frost);">Elaina at Chan Brothers</strong> to coordinate with the China agent. Book at least 2 weeks ahead for Dec peak season.</span>
+    </div>
+    <div style="margin-top:10px; font-size:0.75rem; color:var(--text-muted-dark);">
+      ⚠ Bra/Trish (arriving separately, TBC) will need their own transport.
+    </div>
+  </div>
+
+  <!-- ═══ EXTENDED LEGS: HRB ═══ -->
+  <h2 class="section-title"><span class="section-icon">🗺</span> Post-BDH — Fly out from Harbin (HRB)</h2>
+  <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:#93c5fd;">David/Joelle</strong> (HRB→CAN→SIN Dec 13) and any other families routing through Harbin.</p>
+
+  <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:30px;">
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#93c5fd; font-size:0.9rem; flex-shrink:0;">1</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Harbin Ice City</span>
+            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Best for David/Joelle</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,500–3,500/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Jilin (2 hrs). Afternoon rime 雾凇.<br>
+            <b style="color:var(--frost);">8 Dec</b> Morning rime cruise. HSR Jilin → Harbin (1.5 hrs). Central Street evening.<br>
+            <b style="color:var(--frost);">9 Dec</b> Ice &amp; Snow World (day+night). Saint Sophia Cathedral. Harbin Beer Museum.<br>
+            <b style="color:var(--frost);">10 Dec</b> Siberian Tiger Park. Russian architecture walk.<br>
+            <b style="color:var(--frost);">11 Dec</b> Free day — Songhua River activities. Last night.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN on CZ3914+CZ8489.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-green" style="position:relative">🌫 Jilin rime<span class="tooltip">Best 07:00–09:00. Free to view along Songhua River embankment. Rare winter frost phenomenon.</span></span>
+            <span class="pill pill-blue" style="position:relative">❄ Ice &amp; Snow World<span class="tooltip">World's largest ice park. Typically opens mid-Dec. Entry ¥330 adult. Open 17:00–22:00. −20°C — layer up!</span></span>
+            <span class="pill pill-gold" style="position:relative">🚄 Jilin→Harbin HSR<span class="tooltip">~1.5 hrs, ¥100–140 2nd class. Book on Trip.com.</span></span>
+            <span class="pill pill-purple" style="position:relative">🐯 Tiger Park<span class="tooltip">Northeast Tiger Park. Caged bus safari + feeding. ¥95 entry. Kids 5+ recommended.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">2</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Yanji + Harbin</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Foodies · Culture</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,000–3,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH. HSR to Yanji (3–4 hrs via Changchun). Korean BBQ dinner.<br>
+            <b style="color:var(--frost);">8 Dec</b> Yanbian University, Korean Folk Village. Cold noodles &amp; market street.<br>
+            <b style="color:var(--frost);">9 Dec</b> Morning market. HSR Yanji → Harbin (1.5 hrs). Central Street evening.<br>
+            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Saint Sophia Cathedral.<br>
+            <b style="color:var(--frost);">11 Dec</b> Tiger Park. Harbin Beer Museum. Free evening.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">🥟 Yanji Korean food<span class="tooltip">Fusion Korean-Chinese cuisine. Must-try: 冷面 (cold noodles), 烤肉 (BBQ), 打糕 (rice cake).</span></span>
+            <span class="pill pill-blue" style="position:relative">🚄 Yanji→Harbin HSR<span class="tooltip">Direct HSR ~1.5 hrs, ¥120–160 2nd class.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">3</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime Deep Dive</span>
+            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Relaxed · Photography</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥1,500–2,500/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Jilin (2 hrs). Evening rime walk.<br>
+            <b style="color:var(--frost);">8 Dec</b> Dawn rime at Wusong Island. Songhua River drift boat. Photography.<br>
+            <b style="color:var(--frost);">9 Dec</b> Second rime morning. HSR Jilin → Changchun (30 min). Jingyuetan Park.<br>
+            <b style="color:var(--frost);">10 Dec</b> Puppet Emperor Palace. Changchun Film Studio.<br>
+            <b style="color:var(--frost);">11 Dec</b> HSR Changchun → Harbin (1 hr). Free day.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">🚄 Jilin→Changchun<span class="tooltip">Only 30 min by G-train, ¥35–55. Runs very frequently.</span></span>
+            <span class="pill pill-gold" style="position:relative">🏛 Puppet Palace<span class="tooltip">Manchukuo Imperial Palace. Entry ¥80. Puyi's former residence. Allow 2–3 hrs.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Changchun + Harbin Combo</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">City focus</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">5D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,000–3,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Changchun (2 hrs). Renmin Square area.<br>
+            <b style="color:var(--frost);">8 Dec</b> Puppet Emperor Palace. Film Studio. Jingyuetan Park.<br>
+            <b style="color:var(--frost);">9 Dec</b> HSR Changchun → Harbin (1 hr). Central Street &amp; Saint Sophia.<br>
+            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Tiger Park.<br>
+            <b style="color:var(--frost);">11 Dec</b> Free day. Songhua River ice activities.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">🎬 Film Studio<span class="tooltip">Changchun Film Studio — China's first film studio. ¥90 entry. Fun museum with movie props.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Grand NE Loop — End HRB</span>
+            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Comprehensive</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime at dusk.<br>
+            <b style="color:var(--frost);">8 Dec</b> Dawn rime + drift boat. HSR Jilin → Changchun (30 min). City tour.<br>
+            <b style="color:var(--frost);">9 Dec</b> Film Studio + Puppet Palace. HSR → Harbin (1 hr).<br>
+            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Saint Sophia. Central Street.<br>
+            <b style="color:var(--frost);">11 Dec</b> Tiger Park. Beer Museum. Free evening.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day. Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">💰 Best value<span class="tooltip">Most cities for the cost. Covers Jilin + Changchun + Harbin in one itinerary.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ EXTENDED LEGS: PEK ═══ -->
+  <h2 class="section-title"><span class="section-icon">🗺</span> Post-BDH — Fly out from Beijing (PEK)</h2>
+  <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:var(--gold-light);">Kevin/Trina, John/Celine, Ronald/Jovelle</strong> returning from Beijing.</p>
+
+  <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:8px;">
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#93c5fd; font-size:0.9rem; flex-shrink:0;">1</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime + Beijing Classic</span>
+            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Most popular</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,000–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin (2 hrs). Afternoon rime 雾凇.<br>
+            <b style="color:var(--frost);">8 Dec</b> Morning rime. HSR Jilin → Beijing (4–5 hrs, ¥300–500).<br>
+            <b style="color:var(--frost);">9 Dec</b> Forbidden City + Jingshan Park. Wangfujing Street.<br>
+            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall (cable car, toboggan). Pop Mart City evening.<br>
+            <b style="color:var(--frost);">11 Dec</b> Summer Palace + Temple of Heaven. Peking duck dinner.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free shopping / hutong walk. Last night in Beijing.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-purple" style="position:relative">🏯 Mutianyu Great Wall<span class="tooltip">Less touristy than Badaling. Cable car + toboggan slide. ¥65 entry + ¥120 cable car.</span></span>
+            <span class="pill pill-blue" style="position:relative">🎮 Pop Mart City<span class="tooltip">World's first Pop Mart IP theme park. Blind box rides &amp; art. Check popmartworld.com.</span></span>
+            <span class="pill pill-gold" style="position:relative">🦆 Peking duck<span class="tooltip">Quanjude or Dadong. ¥150–250/pax. Book ahead on Dianping.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">2</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing Direct + Great Wall Focus</span>
+            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Less travel</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → CGQ. Fly CGQ→PEK (~2 hrs, ¥500–800).<br>
+            <b style="color:var(--frost);">8 Dec</b> Forbidden City + Jingshan Park. Wangfujing.<br>
+            <b style="color:var(--frost);">9 Dec</b> Jinshanling Great Wall (less crowded, full day).<br>
+            <b style="color:var(--frost);">10 Dec</b> Summer Palace + Temple of Heaven. Pop Mart City.<br>
+            <b style="color:var(--frost);">11 Dec</b> 798 Art District. Hutong rickshaw tour.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day / National Museum. Last night.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">✈ CGQ→PEK flight<span class="tooltip">~1.5 hrs, ¥500–800. Multiple airlines. Book early for Dec.</span></span>
+            <span class="pill pill-gold" style="position:relative">🧱 Jinshanling Wall<span class="tooltip">Less restored, fewer crowds than Mutianyu. Full day hike. ¥65 entry.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">3</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Changchun Stop + Beijing</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Good value</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,000–4,500/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Changchun (2 hrs). Puppet Emperor Palace.<br>
+            <b style="color:var(--frost);">8 Dec</b> Film Studio morning. HSR Changchun → Beijing (4 hrs, ¥300–400).<br>
+            <b style="color:var(--frost);">9 Dec</b> Forbidden City + Jingshan. Wangfujing evening.<br>
+            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall. Pop Mart City.<br>
+            <b style="color:var(--frost);">11 Dec</b> Summer Palace + Temple of Heaven. Peking duck.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day / hutong tour. Last night.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">🏛 Puppet Palace<span class="tooltip">Fascinating WWII history. Puyi's former residence. ¥80 entry. Allow 2–3 hrs.</span></span>
+            <span class="pill pill-blue" style="position:relative">🚄 Changchun→Beijing HSR<span class="tooltip">~4 hrs, ¥300–400 2nd class. Comfortable, book on Trip.com.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing + Chengde Retreat</span>
+            <span style="font-size:0.68rem; background:rgba(83,74,183,0.25); color:#c4b5fd; border:1px solid rgba(83,74,183,0.35); border-radius:20px; padding:2px 8px;">Off the beaten path</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime 雾凇.<br>
+            <b style="color:var(--frost);">8 Dec</b> Morning rime. HSR Jilin → Beijing (4–5 hrs).<br>
+            <b style="color:var(--frost);">9 Dec</b> Forbidden City. Wangfujing.<br>
+            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall. Pop Mart City evening.<br>
+            <b style="color:var(--frost);">11 Dec</b> HSR Beijing → Chengde (2 hrs). Mountain Resort &amp; Eight Outer Temples.<br>
+            <b style="color:var(--frost);">12 Dec</b> Puning Temple (giant wooden Guanyin). Free afternoon.<br>
+            <b style="color:var(--frost);">13 Dec</b> HSR Chengde → Beijing (2 hrs). PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">🏯 Chengde Mountain Resort<span class="tooltip">UNESCO site. Qing dynasty imperial summer palace. ¥150 entry. HSR from Beijing 2 hrs.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing Food Hop, Arcades &amp; Nightlife</span>
+            <span style="font-size:0.68rem; background:rgba(192,57,43,0.2); color:#fca5a5; border:1px solid rgba(192,57,43,0.35); border-radius:20px; padding:2px 8px;">Foodies · Fun</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,500–4,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime 雾凇. HSR Jilin→Beijing next morning.<br>
+            <b style="color:var(--frost);">8 Dec</b> HSR to Beijing. Check in. Evening Wangfujing snack street — scorpions, candied haw, Beijing yoghurt.<br>
+            <b style="color:var(--frost);">9 Dec</b> Pop Mart City (world's first IP theme park, blind box rides). Guijie (Ghost Street) for crayfish &amp; Sichuan hot pot dinner. Houhai bar street for drinks.<br>
+            <b style="color:var(--frost);">10 Dec</b> Sega Joypolis indoor theme park (arcade games, roller coaster VR). Wangfujing night market. Sanlitun bar district for craft beer &amp; cocktails.<br>
+            <b style="color:var(--frost);">11 Dec</b> Beijing LEGO Store &amp; indoor playground. Peking duck farewell dinner. Last night rooftop bar.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day for last eats &amp; shopping. PEK airport hotel.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">🎮 Pop Mart City<span class="tooltip">World's first immersive Pop Mart IP theme park. Blind box characters, rides, art. Check popmartworld.com for tickets.</span></span>
+            <span class="pill pill-purple" style="position:relative">🎪 Sega Joypolis<span class="tooltip">Indoor arcade in Chaoyang. VR rides, racing sims, claw machines. ¥200–300 for all-day pass. Fun for kids and adults.</span></span>
+            <span class="pill pill-blue" style="position:relative">🍺 Sanlitun bars<span class="tooltip">Beijing's main nightlife district. Craft beer at Jing-A, cocktails at Infusion Room, or quiet bars in the hutongs.</span></span>
+            <span class="pill pill-green" style="position:relative">🦐 Guijie food street<span class="tooltip">Ghost Street (簋街) — 1.5 km of restaurants. Famous for spicy crayfish (麻辣小龙虾), hot pot, and skewers. Open till 5am.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ITINERARY -->
+  <h2 class="section-title"><span class="section-icon">📅</span> Itinerary</h2>
+
+  <div class="timeline">
+
+    <!-- DAY 1 -->
+    <div class="timeline-day">
+      <div class="day-dot highlight"></div>
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <span class="day-label">Day 1</span>
+          <span class="day-date">Tuesday, 2 Dec — Departure Day <span class="trip-badge badge-travel">Travel</span></span>
+          <span class="day-location"><span class="loc-icon">📍</span> Singapore → Changchun</span>
+          <span class="open-tag">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="day-body-inner">
+            <ul class="event-list">
+              <li class="event-item">
+                <span class="event-time">All day</span>
+                <span class="event-text">Different families depart from Singapore on various flights. Most routing via Guangzhou (CAN) to Changchun (CGQ).</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">08:00</span>
+                <span class="event-text"><strong>David/Joelle, Kevin/Trina, Ronald/Jovelle, Jason/WeiWei &amp; John/Celine</strong> — all 5 families depart SIN on <strong>CZ353</strong> → Guangzhou (CAN T2)</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">~14:xx</span>
+                <span class="event-text">Connect on <strong>CZ6342</strong> CAN T2 → Changchun CGQ, arriving <strong>18:05</strong></span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">Evening</span>
+                <span class="event-text">Check in to Changchun hotel. Explore local food — try Korean-Chinese 东北 cuisine!</span>
+              </li>
+            </ul>
+            <div class="day-pills">
+              <div class="pill pill-blue">
+                ✈ CZ353 SIN→CAN 08:00
+              </div>
+              <div class="pill pill-blue">
+                ✈ CZ6342 CAN→CGQ arr 18:05
+              </div>
+              <div class="pill pill-gold" style="position:relative">
+                🚕 Didi from CGQ airport
+                <span class="tooltip">Didi from Changchun Airport to city hotels: est. ¥60–90 (~S$11–17). Takes ~40 min.</span>
+              </div>
+              <div class="pill pill-tbc">⏳ Ongs / Hwangs / Tham families: times TBC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="timeline-day">
+      <div class="day-dot"></div>
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <span class="day-label">Day 2</span>
+          <span class="day-date">Wednesday, 3 Dec — Transfer to Beidahu <span class="trip-badge badge-travel">Travel</span></span>
+          <span class="day-location"><span class="loc-icon">📍</span> Changchun → Jilin → Beidahu</span>
+          <span class="open-tag">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="day-body-inner">
+            <ul class="event-list">
+              <li class="event-item">
+                <span class="event-time">Morning</span>
+                <span class="event-text">Check out Changchun hotel. Route to Beidahu via Jilin city (approximately 3–4 hrs total journey).</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">En route</span>
+                <span class="event-text">Option to stop in <strong>Jilin city</strong> to view the famous <strong>Rime Ice (雾凇)</strong> on the Songhua River — a bucket-list winter spectacle unique to this region.</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">15:00</span>
+                <span class="event-text"><strong>Club Med Beidahu check-in</strong> from 15:00. All 6 families reunite! 🎉</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">Evening</span>
+                <span class="event-text">Settle in, explore the resort. Welcome drinks at the bar — all-inclusive!</span>
+              </li>
+            </ul>
+            <div class="day-pills">
+              <div class="pill pill-gold" style="position:relative">
+                🚌 Changchun → Jilin → BDH
+                <span class="tooltip">Private charter van (6–7 seat): est. ¥400–600 for the group (~S$75–110). Book via China agent. ~3.5 hr drive including Jilin stop.</span>
+              </div>
+              <div class="pill pill-blue" style="position:relative">
+                🌫 Rime Ice viewing
+                <span class="tooltip">Jilin rime ice (雾凇) — best viewed 07:00–09:00 along the Songhua River embankment. Free to view. Dress warmly!</span>
+              </div>
+              <div class="pill pill-green">
+                🏨 Club Med Beidahu Check-in
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAYS 3-6 CLUBMED -->
+    <div class="timeline-day">
+      <div class="day-dot clubmed"></div>
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <span class="day-label">Days 3–6</span>
+          <span class="day-date">Thu 4 Dec – Sun 7 Dec — Club Med Beidahu <span class="trip-badge badge-clubmed">All-Inclusive</span></span>
+          <span class="day-location"><span class="loc-icon">📍</span> Club Med Beidahu Resort</span>
+          <span class="open-tag">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="day-body-inner">
+            <div class="clubmed-block">
+              <h3>🎿 4 Nights · All 6 Families · Fully Booked via Chan Brothers</h3>
+              <p style="font-size:0.8rem; color:var(--text-muted-dark); margin-bottom:12px;">3 Dec check-in → 7 Dec check-out · Rooms: 4× Family Deluxe + 3× King Deluxe</p>
+              <div class="amenity-grid">
+                <div class="amenity-item"><span class="amenity-dot"></span>All meals included</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>All-day snacking</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Unlimited bar (alcohol &amp; non-alcohol)</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Ski passes (from day 2)</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Group ski/snowboard lessons</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Fitness classes</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Sports centre</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Japanese onsen / spa</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Indoor water play</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Hot pot dining</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>Kids club</div>
+                <div class="amenity-item"><span class="amenity-dot"></span>CMLink SIM card</div>
+              </div>
+            </div>
+            <div class="day-pills" style="margin-top:14px;">
+              <div class="pill pill-green" style="position:relative">
+                🌡 Onsen / spa
+                <span class="tooltip">Club Med Beidahu has an in-house Japanese onsen. Not as large as Changbaishan's 3000sqm wellness oasis, but good for families.</span>
+              </div>
+              <div class="pill pill-blue" style="position:relative">
+                🎿 Non-steep slopes
+                <span class="tooltip">Beidahu known for beginner-friendly slopes — great for kids and first-timers. Lifts and runs suitable for mixed skill levels.</span>
+              </div>
+              <div class="pill pill-purple">
+                👶 Kids club on-site
+              </div>
+              <div class="pill pill-gold" style="position:relative">
+                🍲 Hot pot included
+                <span class="tooltip">Club Med Beidahu includes a hot pot dining experience as part of the all-inclusive package.</span>
+              </div>
+              <div class="pill pill-tbc">
+                ⏳ Day trip: West Slope CBS (if arranged by agent)
+              </div>
+            </div>
+            <ul class="event-list" style="margin-top:14px;">
+              <li class="event-item">
+                <span class="event-time">7 Dec</span>
+                <span class="event-text"><strong>Check-out by 10:00.</strong> Families split — some head to Jilin/Beijing, arrangements TBC per family.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 7 ONWARD: POST CLUBMED -->
+    <div class="timeline-day">
+      <div class="day-dot"></div>
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <span class="day-label">Day 7+</span>
+          <span class="day-date">Mon 7 Dec onwards — Post Beidahu <span class="trip-badge badge-explore">Explore</span></span>
+          <span class="day-location"><span class="loc-icon">📍</span> Jilin · Beijing · Various</span>
+          <span class="open-tag">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="day-body-inner">
+            <ul class="event-list">
+              <li class="event-item">
+                <span class="event-time">7 Dec</span>
+                <span class="event-text">Check out from Club Med by 10:00. Transfer to Jilin / Changchun for onward journey.</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">7–9 Dec</span>
+                <span class="event-text"><strong>Jilin / Changchun 2–3 nights</strong> (Kevin's plan: BDH → Jilin → Beijing). Activities may include Jilin rime ice views, local food, city sightseeing. <span style="color:#c9a15a; font-style:italic;">Details TBC per family.</span></span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">~9–12 Dec</span>
+                <span class="event-text"><strong>Beijing</strong> for those going. Sightseeing options: Forbidden City, Summer Palace, Great Wall (Juyongguan), Wangfujing, Pop Mart City. <span style="color:#c9a15a; font-style:italic;">Itinerary TBC per family.</span></span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">Note</span>
+                <span class="event-text"><strong>Joelle &amp; David</strong> return from <strong>Harbin (HRB)</strong> — likely including a Harbin stopover before flying home. Check if Harbin Ice Festival is on!</span>
+              </li>
+            </ul>
+            <div class="day-pills">
+              <div class="pill pill-gold" style="position:relative">
+                🚄 BDH → Jilin HSR
+                <span class="tooltip">Nearest HSR station to Beidahu is Jilin. Train to Changchun ~30 min (¥35–55). Then Changchun to Beijing G-train ~3.5–4 hrs (¥350–480). Book on 12306.cn or Trip.com.</span>
+              </div>
+              <div class="pill pill-blue" style="position:relative">
+                🚕 Didi in Jilin / Changchun
+                <span class="tooltip">Didi works well in Jilin &amp; Changchun. City rides typically ¥20–50. Download Didi app and link to WeChat Pay or Alipay before travel.</span>
+              </div>
+              <div class="pill pill-blue" style="position:relative">
+                🚕 Didi in Beijing
+                <span class="tooltip">Beijing Didi rides: city centre ~¥25–60. Airport to city ~¥100–140 (~S$19–26). Very reliable. Have destination in Chinese characters ready.</span>
+              </div>
+              <div class="pill pill-purple" style="position:relative">
+                🏯 Beijing sightseeing
+                <span class="tooltip">Suggested: Forbidden City ¥60, Summer Palace ¥30, Juyongguan Great Wall ¥45, Wangfujing Street (free), Pop Mart City (TBC pricing). Book Forbidden City tickets in advance online — often sells out!</span>
+              </div>
+              <div class="pill pill-tbc">⏳ Each family's post-BDH plan TBC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETURN FLIGHTS -->
+    <div class="timeline-day">
+      <div class="day-dot highlight"></div>
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <span class="day-label">Return</span>
+          <span class="day-date">13–14 Dec — Fly Home <span class="trip-badge badge-travel">Travel</span></span>
+          <span class="day-location"><span class="loc-icon">📍</span> China → Singapore</span>
+          <span class="open-tag">▾</span>
+        </div>
+        <div class="day-body">
+          <div class="day-body-inner">
+            <ul class="event-list">
+              <li class="event-item">
+                <span class="event-time">13 Dec 16:00</span>
+                <span class="event-text"><strong>David &amp; Joelle</strong> depart Harbin (HRB T2) on <strong>CZ3914</strong> → Guangzhou (CAN T2) arriving ~21:05</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">13 Dec 22:40</span>
+                <span class="event-text"><strong>David &amp; Joelle</strong> depart CAN T2 on <strong>CZ8489</strong> → Singapore. Note: luggage must be re-checked at Guangzhou transit.</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">14 Dec</span>
+                <span class="event-text"><strong>Choongs (Ronald &amp; Jovelle)</strong> depart 08:45</span>
+              </li>
+              <li class="event-item">
+                <span class="event-time">TBC</span>
+                <span class="event-text">All other families: return flights TBC per individual bookings. Kevin/Trina and Hwangs have booked (dates TBC in chat).</span>
+              </li>
+            </ul>
+            <div class="day-pills">
+              <div class="pill pill-blue">✈ CZ3914 HRB→CAN (David/Joelle)</div>
+              <div class="pill pill-blue">✈ CZ8489 CAN→SIN dep 22:40</div>
+              <div class="pill pill-gold" style="position:relative">
+                ⚠ Re-check baggage at CAN
+                <span class="tooltip">China Southern transit at Guangzhou: on international-domestic connections, luggage may need to be collected and re-checked. Allow 90–120 min at CAN. Confirm with CZ at check-in.</span>
+              </div>
+              <div class="pill pill-tbc">⏳ Ongs / Hwangs return: booked but dates TBC</div>
+              <div class="pill pill-tbc">⏳ Tham (John/Celine) return: TBC</div>
+              <div class="pill pill-tbc">⏳ Bra/Tricia return: TBC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end timeline -->
+
+  <!-- COSTS -->
+  <h2 class="section-title"><span class="section-icon">💰</span> Cost overview</h2>
+  <div class="cost-section">
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Per adult</th>
+          <th>Per child / teen</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Club Med Beidahu (4N Deluxe King)
+            <div class="cost-note">Via Chan Brothers · confirmed</div>
+          </td>
+          <td class="cost-amt">S$1,260</td>
+          <td class="cost-amt">S$760 (child) · S$1,010 (teen)</td>
+          <td>Excl. airport transfer + air tix. All meals &amp; drinks included.</td>
+        </tr>
+        <tr>
+          <td>
+            Club Med Beidahu (4N Family Deluxe)
+            <div class="cost-note">Limited availability · Chan Brothers</div>
+          </td>
+          <td class="cost-amt">S$1,450</td>
+          <td class="cost-amt">S$880 (child) · S$1,170 (teen)</td>
+          <td>For 4 families with young kids sharing 1 room.</td>
+        </tr>
+        <tr>
+          <td>
+            Flights (David/Joelle example)
+            <div class="cost-note">China Southern · SIN↔HRB via CAN</div>
+          </td>
+          <td class="cost-amt tbc-text">Individual pricing</td>
+          <td class="cost-amt tbc-text">Individual pricing</td>
+          <td>Prices fluctuate. Kevin noted China airline prices pingpong — monitor and book when low.</td>
+        </tr>
+        <tr>
+          <td>
+            Airport transfer: CGQ → Beidahu
+            <div class="cost-note">~2 hr drive via Jilin</div>
+          </td>
+          <td colspan="2" class="cost-amt tbc-text">TBC — est. ¥400–600 per van</td>
+          <td>Book private charter via China agent. Seat-in-coach option also available via Club Med (~S$168 pp return).</td>
+        </tr>
+        <tr>
+          <td>
+            Jilin / Changchun accommodation
+            <div class="cost-note">Pre or post Beidahu</div>
+          </td>
+          <td colspan="2" class="cost-amt tbc-text">TBC per family</td>
+          <td>Local 5-star hotels available. Agent quoted 2N Changchun at ~S$860/adult if bundled.</td>
+        </tr>
+        <tr>
+          <td>Beijing accommodation</td>
+          <td colspan="2" class="cost-amt tbc-text">TBC per family</td>
+          <td>Local 5-star hotel if opting for Beijing leg. Some families (Joelle) not going Beijing.</td>
+        </tr>
+        <tr>
+          <td>Travel insurance</td>
+          <td colspan="2" class="cost-amt tbc-text">TBC — arrange individually</td>
+          <td>Not included in Chan Brothers booking. Arrange own — recommended now that air tix booked.</td>
+        </tr>
+        <tr>
+          <td>Complimentary gifts (Chan Brothers)</td>
+          <td colspan="2" class="cost-amt" style="color:#6ee79a;">FREE ✅</td>
+          <td>Beanies + kids gloves delivered to Joelle. Kevin has them for distribution to all families.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GIFTS -->
+  <div class="gifts-box">
+    <span class="gifts-icon">🎁</span>
+    <div class="gifts-text">
+      <h3>Chan Brothers complimentary gifts — ready for collection!</h3>
+      <p>Beanies and kids' gloves delivered to <strong>Joelle's home</strong> (9 Jun). <strong>Kevin now holds all gifts</strong> for distribution to the other families. Remember to pick yours up before the trip!</p>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <h2 class="section-title"><span class="section-icon">✅</span> Trip checklist</h2>
+  <div class="checklist">
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">Club Med Beidahu booked (all 6 families)</span>
+    </div>
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">David/Joelle flights confirmed</span>
+    </div>
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">Kevin/Trina flights booked</span>
+    </div>
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">Hwangs (Jason/WeiWei) flights booked</span>
+    </div>
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">Choongs (Ronald/Jovelle) flights booked</span>
+    </div>
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">Chan Brothers gifts received</span>
+    </div>
+    <div class="check-item check-done">
+      <span class="check-icon">✅</span>
+      <span class="check-label">Kevin holding all gifts for group</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Bra &amp; Tricia — book flights!</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">John/Celine — confirm flights</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">All families — buy travel insurance</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Set up WeChat Pay / Alipay</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Book Forbidden City tickets in advance</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Post-BDH plans (7–13 Dec) — TBC per family</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Airport transfers to/from BDH — book via agent</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Collect gifts from Kevin before departure</span>
+    </div>
+    <div class="check-item check-pending">
+      <span class="check-icon">⏳</span>
+      <span class="check-label">Pack thermals, ski gear, warm layers</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>🏔 <strong>China 2026</strong> · Club Med Beidahu · 3–7 Dec 2026</p>
+    <p style="margin-top:8px;">Booked via <strong>Chan Brothers Express</strong> · Agent: Elaina · Group chat: "China 2026"</p>
+    <p style="margin-top:8px; font-size:0.7rem; opacity:0.5;">Generated from group WhatsApp · Last updated Jun 2026 · Information subject to change</p>
+  </div>
+
+</div><!-- end page-wrap -->
+
+<script>
+(function() {
+  const flakes = document.getElementById('snowflakes');
+  const chars = ['❄', '❅', '❆', '✦', '·'];
+  for (let i = 0; i < 28; i++) {
+    const el = document.createElement('span');
+    el.className = 'snowflake';
+    el.textContent = chars[Math.floor(Math.random() * chars.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (Math.random() * 0.8 + 0.5) + 'em';
+    el.style.animationDuration = (Math.random() * 12 + 10) + 's';
+    el.style.animationDelay = (Math.random() * 12) + 's';
+    el.style.opacity = Math.random() * 0.4 + 0.1;
+    flakes.appendChild(el);
+  }
+})();
+
+function toggleDay(header) {
+  const body = header.nextElementSibling;
+  const tag = header.querySelector('.open-tag');
+  if (body.classList.contains('open')) {
+    body.classList.remove('open');
+    tag.textContent = '▾';
+  } else {
+    body.classList.add('open');
+    tag.textContent = '▴';
+  }
+}
+
+// Open day 1 by default
+document.addEventListener('DOMContentLoaded', function() {
+  const first = document.querySelector('.day-header');
+  if (first) toggleDay(first);
+});
+</script>
+</body>
+</html>
