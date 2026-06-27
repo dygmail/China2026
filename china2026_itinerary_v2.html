@@ -538,6 +538,31 @@
   .badge-clubmed { background: rgba(26,74,46,0.5); color: #6ee79a; border: 1px solid rgba(26,106,64,0.4); }
   .badge-travel { background: rgba(37,99,168,0.3); color: #93c5fd; border: 1px solid rgba(37,99,168,0.4); }
   .badge-explore { background: rgba(83,74,183,0.25); color: #c4b5fd; border: 1px solid rgba(83,74,183,0.35); }
+
+  .ext-accordion {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,223,245,0.12);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: border-color 0.2s;
+  }
+  .ext-accordion:hover { border-color: rgba(200,223,245,0.28); }
+  .ext-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .ext-header:hover { background: rgba(255,255,255,0.03); }
+  .ext-body {
+    display: none;
+    border-top: 1px solid rgba(200,223,245,0.08);
+    padding: 16px;
+  }
+  .ext-body.open { display: block; }
 </style>
 </head>
 <body>
@@ -749,294 +774,6 @@
     <div style="margin-top:10px; font-size:0.75rem; color:var(--text-muted-dark);">
       ⚠ Bra/Trish (arriving separately, TBC) will need their own transport.
     </div>
-  </div>
-
-  <!-- ═══ EXTENDED LEGS: HRB ═══ -->
-  <h2 class="section-title"><span class="section-icon">🗺</span> Post-BDH — Fly out from Harbin (HRB)</h2>
-  <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:#93c5fd;">David/Joelle</strong> (HRB→CAN→SIN Dec 13) and any other families routing through Harbin.</p>
-
-  <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:30px;">
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#93c5fd; font-size:0.9rem; flex-shrink:0;">1</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Harbin Ice City</span>
-            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Best for David/Joelle</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,500–3,500/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Jilin (2 hrs). Afternoon rime 雾凇.<br>
-            <b style="color:var(--frost);">8 Dec</b> Morning rime cruise. HSR Jilin → Harbin (1.5 hrs). Central Street evening.<br>
-            <b style="color:var(--frost);">9 Dec</b> Ice &amp; Snow World (day+night). Saint Sophia Cathedral. Harbin Beer Museum.<br>
-            <b style="color:var(--frost);">10 Dec</b> Siberian Tiger Park. Russian architecture walk.<br>
-            <b style="color:var(--frost);">11 Dec</b> Free day — Songhua River activities. Last night.<br>
-            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
-            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN on CZ3914+CZ8489.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-green" style="position:relative">🌫 Jilin rime<span class="tooltip">Best 07:00–09:00. Free to view along Songhua River embankment. Rare winter frost phenomenon.</span></span>
-            <span class="pill pill-blue" style="position:relative">❄ Ice &amp; Snow World<span class="tooltip">World's largest ice park. Typically opens mid-Dec. Entry ¥330 adult. Open 17:00–22:00. −20°C — layer up!</span></span>
-            <span class="pill pill-gold" style="position:relative">🚄 Jilin→Harbin HSR<span class="tooltip">~1.5 hrs, ¥100–140 2nd class. Book on Trip.com.</span></span>
-            <span class="pill pill-purple" style="position:relative">🐯 Tiger Park<span class="tooltip">Northeast Tiger Park. Caged bus safari + feeding. ¥95 entry. Kids 5+ recommended.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">2</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Yanji + Harbin</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Foodies · Culture</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,000–3,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH. HSR to Yanji (3–4 hrs via Changchun). Korean BBQ dinner.<br>
-            <b style="color:var(--frost);">8 Dec</b> Yanbian University, Korean Folk Village. Cold noodles &amp; market street.<br>
-            <b style="color:var(--frost);">9 Dec</b> Morning market. HSR Yanji → Harbin (1.5 hrs). Central Street evening.<br>
-            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Saint Sophia Cathedral.<br>
-            <b style="color:var(--frost);">11 Dec</b> Tiger Park. Harbin Beer Museum. Free evening.<br>
-            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
-            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-gold" style="position:relative">🥟 Yanji Korean food<span class="tooltip">Fusion Korean-Chinese cuisine. Must-try: 冷面 (cold noodles), 烤肉 (BBQ), 打糕 (rice cake).</span></span>
-            <span class="pill pill-blue" style="position:relative">🚄 Yanji→Harbin HSR<span class="tooltip">Direct HSR ~1.5 hrs, ¥120–160 2nd class.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">3</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime Deep Dive</span>
-            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Relaxed · Photography</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥1,500–2,500/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Jilin (2 hrs). Evening rime walk.<br>
-            <b style="color:var(--frost);">8 Dec</b> Dawn rime at Wusong Island. Songhua River drift boat. Photography.<br>
-            <b style="color:var(--frost);">9 Dec</b> Second rime morning. HSR Jilin → Changchun (30 min). Jingyuetan Park.<br>
-            <b style="color:var(--frost);">10 Dec</b> Puppet Emperor Palace. Changchun Film Studio.<br>
-            <b style="color:var(--frost);">11 Dec</b> HSR Changchun → Harbin (1 hr). Free day.<br>
-            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
-            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-blue" style="position:relative">🚄 Jilin→Changchun<span class="tooltip">Only 30 min by G-train, ¥35–55. Runs very frequently.</span></span>
-            <span class="pill pill-gold" style="position:relative">🏛 Puppet Palace<span class="tooltip">Manchukuo Imperial Palace. Entry ¥80. Puyi's former residence. Allow 2–3 hrs.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Changchun + Harbin Combo</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">City focus</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">5D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,000–3,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Changchun (2 hrs). Renmin Square area.<br>
-            <b style="color:var(--frost);">8 Dec</b> Puppet Emperor Palace. Film Studio. Jingyuetan Park.<br>
-            <b style="color:var(--frost);">9 Dec</b> HSR Changchun → Harbin (1 hr). Central Street &amp; Saint Sophia.<br>
-            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Tiger Park.<br>
-            <b style="color:var(--frost);">11 Dec</b> Free day. Songhua River ice activities.<br>
-            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
-            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-blue" style="position:relative">🎬 Film Studio<span class="tooltip">Changchun Film Studio — China's first film studio. ¥90 entry. Fun museum with movie props.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Grand NE Loop — End HRB</span>
-            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Comprehensive</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime at dusk.<br>
-            <b style="color:var(--frost);">8 Dec</b> Dawn rime + drift boat. HSR Jilin → Changchun (30 min). City tour.<br>
-            <b style="color:var(--frost);">9 Dec</b> Film Studio + Puppet Palace. HSR → Harbin (1 hr).<br>
-            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Saint Sophia. Central Street.<br>
-            <b style="color:var(--frost);">11 Dec</b> Tiger Park. Beer Museum. Free evening.<br>
-            <b style="color:var(--frost);">12 Dec</b> Free day. Transfer to HRB airport hotel.<br>
-            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-gold" style="position:relative">💰 Best value<span class="tooltip">Most cities for the cost. Covers Jilin + Changchun + Harbin in one itinerary.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ═══ EXTENDED LEGS: PEK ═══ -->
-  <h2 class="section-title"><span class="section-icon">🗺</span> Post-BDH — Fly out from Beijing (PEK)</h2>
-  <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:var(--gold-light);">Kevin/Trina, John/Celine, Ronald/Jovelle</strong> returning from Beijing.</p>
-
-  <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:8px;">
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#93c5fd; font-size:0.9rem; flex-shrink:0;">1</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime + Beijing Classic</span>
-            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Most popular</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,000–5,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin (2 hrs). Afternoon rime 雾凇.<br>
-            <b style="color:var(--frost);">8 Dec</b> Morning rime. HSR Jilin → Beijing (4–5 hrs, ¥300–500).<br>
-            <b style="color:var(--frost);">9 Dec</b> Forbidden City + Jingshan Park. Wangfujing Street.<br>
-            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall (cable car, toboggan). Pop Mart City evening.<br>
-            <b style="color:var(--frost);">11 Dec</b> Summer Palace + Temple of Heaven. Peking duck dinner.<br>
-            <b style="color:var(--frost);">12 Dec</b> Free shopping / hutong walk. Last night in Beijing.<br>
-            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-purple" style="position:relative">🏯 Mutianyu Great Wall<span class="tooltip">Less touristy than Badaling. Cable car + toboggan slide. ¥65 entry + ¥120 cable car.</span></span>
-            <span class="pill pill-blue" style="position:relative">🎮 Pop Mart City<span class="tooltip">World's first Pop Mart IP theme park. Blind box rides &amp; art. Check popmartworld.com.</span></span>
-            <span class="pill pill-gold" style="position:relative">🦆 Peking duck<span class="tooltip">Quanjude or Dadong. ¥150–250/pax. Book ahead on Dianping.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">2</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing Direct + Great Wall Focus</span>
-            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Less travel</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → CGQ. Fly CGQ→PEK (~2 hrs, ¥500–800).<br>
-            <b style="color:var(--frost);">8 Dec</b> Forbidden City + Jingshan Park. Wangfujing.<br>
-            <b style="color:var(--frost);">9 Dec</b> Jinshanling Great Wall (less crowded, full day).<br>
-            <b style="color:var(--frost);">10 Dec</b> Summer Palace + Temple of Heaven. Pop Mart City.<br>
-            <b style="color:var(--frost);">11 Dec</b> 798 Art District. Hutong rickshaw tour.<br>
-            <b style="color:var(--frost);">12 Dec</b> Free day / National Museum. Last night.<br>
-            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-blue" style="position:relative">✈ CGQ→PEK flight<span class="tooltip">~1.5 hrs, ¥500–800. Multiple airlines. Book early for Dec.</span></span>
-            <span class="pill pill-gold" style="position:relative">🧱 Jinshanling Wall<span class="tooltip">Less restored, fewer crowds than Mutianyu. Full day hike. ¥65 entry.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">3</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Changchun Stop + Beijing</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Good value</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,000–4,500/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Changchun (2 hrs). Puppet Emperor Palace.<br>
-            <b style="color:var(--frost);">8 Dec</b> Film Studio morning. HSR Changchun → Beijing (4 hrs, ¥300–400).<br>
-            <b style="color:var(--frost);">9 Dec</b> Forbidden City + Jingshan. Wangfujing evening.<br>
-            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall. Pop Mart City.<br>
-            <b style="color:var(--frost);">11 Dec</b> Summer Palace + Temple of Heaven. Peking duck.<br>
-            <b style="color:var(--frost);">12 Dec</b> Free day / hutong tour. Last night.<br>
-            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-gold" style="position:relative">🏛 Puppet Palace<span class="tooltip">Fascinating WWII history. Puyi's former residence. ¥80 entry. Allow 2–3 hrs.</span></span>
-            <span class="pill pill-blue" style="position:relative">🚄 Changchun→Beijing HSR<span class="tooltip">~4 hrs, ¥300–400 2nd class. Comfortable, book on Trip.com.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing + Chengde Retreat</span>
-            <span style="font-size:0.68rem; background:rgba(83,74,183,0.25); color:#c4b5fd; border:1px solid rgba(83,74,183,0.35); border-radius:20px; padding:2px 8px;">Off the beaten path</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime 雾凇.<br>
-            <b style="color:var(--frost);">8 Dec</b> Morning rime. HSR Jilin → Beijing (4–5 hrs).<br>
-            <b style="color:var(--frost);">9 Dec</b> Forbidden City. Wangfujing.<br>
-            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall. Pop Mart City evening.<br>
-            <b style="color:var(--frost);">11 Dec</b> HSR Beijing → Chengde (2 hrs). Mountain Resort &amp; Eight Outer Temples.<br>
-            <b style="color:var(--frost);">12 Dec</b> Puning Temple (giant wooden Guanyin). Free afternoon.<br>
-            <b style="color:var(--frost);">13 Dec</b> HSR Chengde → Beijing (2 hrs). PEK → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-blue" style="position:relative">🏯 Chengde Mountain Resort<span class="tooltip">UNESCO site. Qing dynasty imperial summer palace. ¥150 entry. HSR from Beijing 2 hrs.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing Food Hop, Arcades &amp; Nightlife</span>
-            <span style="font-size:0.68rem; background:rgba(192,57,43,0.2); color:#fca5a5; border:1px solid rgba(192,57,43,0.35); border-radius:20px; padding:2px 8px;">Foodies · Fun</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,500–4,000/pax</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
-            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime 雾凇. HSR Jilin→Beijing next morning.<br>
-            <b style="color:var(--frost);">8 Dec</b> HSR to Beijing. Check in. Evening Wangfujing snack street — scorpions, candied haw, Beijing yoghurt.<br>
-            <b style="color:var(--frost);">9 Dec</b> Pop Mart City (world's first IP theme park, blind box rides). Guijie (Ghost Street) for crayfish &amp; Sichuan hot pot dinner. Houhai bar street for drinks.<br>
-            <b style="color:var(--frost);">10 Dec</b> Sega Joypolis indoor theme park (arcade games, roller coaster VR). Wangfujing night market. Sanlitun bar district for craft beer &amp; cocktails.<br>
-            <b style="color:var(--frost);">11 Dec</b> Beijing LEGO Store &amp; indoor playground. Peking duck farewell dinner. Last night rooftop bar.<br>
-            <b style="color:var(--frost);">12 Dec</b> Free day for last eats &amp; shopping. PEK airport hotel.<br>
-            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-            <span class="pill pill-gold" style="position:relative">🎮 Pop Mart City<span class="tooltip">World's first immersive Pop Mart IP theme park. Blind box characters, rides, art. Check popmartworld.com for tickets.</span></span>
-            <span class="pill pill-purple" style="position:relative">🎪 Sega Joypolis<span class="tooltip">Indoor arcade in Chaoyang. VR rides, racing sims, claw machines. ¥200–300 for all-day pass. Fun for kids and adults.</span></span>
-            <span class="pill pill-blue" style="position:relative">🍺 Sanlitun bars<span class="tooltip">Beijing's main nightlife district. Craft beer at Jing-A, cocktails at Infusion Room, or quiet bars in the hutongs.</span></span>
-            <span class="pill pill-green" style="position:relative">🦐 Guijie food street<span class="tooltip">Ghost Street (簋街) — 1.5 km of restaurants. Famous for spicy crayfish (麻辣小龙虾), hot pot, and skewers. Open till 5am.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <!-- ITINERARY -->
@@ -1303,6 +1040,305 @@
 
   </div><!-- end timeline -->
 
+
+  <div class="ext-accordion">
+    <div class="ext-header" onclick="toggleExtended(this)">
+      <h2 class="section-title" style="margin:0; flex:1;"><span class="section-icon">🗺</span> Post-BDH — Fly out from Harbin (HRB)</h2>
+      <span class="open-tag">▾</span>
+    </div>
+    <div class="ext-body">
+      <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:#93c5fd;">David/Joelle</strong> (HRB→CAN→SIN Dec 13) and any other families routing through Harbin.</p>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#93c5fd; font-size:0.9rem; flex-shrink:0;">1</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Harbin Ice City</span>
+            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Best for David/Joelle</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,500–3,500/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Jilin (2 hrs). Afternoon rime 雾凇.<br>
+            <b style="color:var(--frost);">8 Dec</b> Morning rime cruise. HSR Jilin → Harbin (1.5 hrs). Central Street evening.<br>
+            <b style="color:var(--frost);">9 Dec</b> Ice &amp; Snow World (day+night). Saint Sophia Cathedral. Harbin Beer Museum.<br>
+            <b style="color:var(--frost);">10 Dec</b> Siberian Tiger Park. Russian architecture walk.<br>
+            <b style="color:var(--frost);">11 Dec</b> Free day — Songhua River activities. Last night.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN on CZ3914+CZ8489.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-green" style="position:relative">🌫 Jilin rime<span class="tooltip">Best 07:00–09:00. Free to view along Songhua River embankment. Rare winter frost phenomenon.</span></span>
+            <span class="pill pill-blue" style="position:relative">❄ Ice &amp; Snow World<span class="tooltip">World's largest ice park. Typically opens mid-Dec. Entry ¥330 adult. Open 17:00–22:00. −20°C — layer up!</span></span>
+            <span class="pill pill-gold" style="position:relative">🚄 Jilin→Harbin HSR<span class="tooltip">~1.5 hrs, ¥100–140 2nd class. Book on Trip.com.</span></span>
+            <span class="pill pill-purple" style="position:relative">🐯 Tiger Park<span class="tooltip">Northeast Tiger Park. Caged bus safari + feeding. ¥95 entry. Kids 5+ recommended.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">2</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Yanji + Harbin</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Foodies · Culture</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,000–3,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH. HSR to Yanji (3–4 hrs via Changchun). Korean BBQ dinner.<br>
+            <b style="color:var(--frost);">8 Dec</b> Yanbian University, Korean Folk Village. Cold noodles &amp; market street.<br>
+            <b style="color:var(--frost);">9 Dec</b> Morning market. HSR Yanji → Harbin (1.5 hrs). Central Street evening.<br>
+            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Saint Sophia Cathedral.<br>
+            <b style="color:var(--frost);">11 Dec</b> Tiger Park. Harbin Beer Museum. Free evening.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">🥟 Yanji Korean food<span class="tooltip">Fusion Korean-Chinese cuisine. Must-try: 冷面 (cold noodles), 烤肉 (BBQ), 打糕 (rice cake).</span></span>
+            <span class="pill pill-blue" style="position:relative">🚄 Yanji→Harbin HSR<span class="tooltip">Direct HSR ~1.5 hrs, ¥120–160 2nd class.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">3</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime Deep Dive</span>
+            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Relaxed · Photography</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥1,500–2,500/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Jilin (2 hrs). Evening rime walk.<br>
+            <b style="color:var(--frost);">8 Dec</b> Dawn rime at Wusong Island. Songhua River drift boat. Photography.<br>
+            <b style="color:var(--frost);">9 Dec</b> Second rime morning. HSR Jilin → Changchun (30 min). Jingyuetan Park.<br>
+            <b style="color:var(--frost);">10 Dec</b> Puppet Emperor Palace. Changchun Film Studio.<br>
+            <b style="color:var(--frost);">11 Dec</b> HSR Changchun → Harbin (1 hr). Free day.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">🚄 Jilin→Changchun<span class="tooltip">Only 30 min by G-train, ¥35–55. Runs very frequently.</span></span>
+            <span class="pill pill-gold" style="position:relative">🏛 Puppet Palace<span class="tooltip">Manchukuo Imperial Palace. Entry ¥80. Puyi's former residence. Allow 2–3 hrs.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Changchun + Harbin Combo</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">City focus</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">5D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,000–3,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → transfer to Changchun (2 hrs). Renmin Square area.<br>
+            <b style="color:var(--frost);">8 Dec</b> Puppet Emperor Palace. Film Studio. Jingyuetan Park.<br>
+            <b style="color:var(--frost);">9 Dec</b> HSR Changchun → Harbin (1 hr). Central Street &amp; Saint Sophia.<br>
+            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Tiger Park.<br>
+            <b style="color:var(--frost);">11 Dec</b> Free day. Songhua River ice activities.<br>
+            <b style="color:var(--frost);">12 Dec</b> Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">🎬 Film Studio<span class="tooltip">Changchun Film Studio — China's first film studio. ¥90 entry. Fun museum with movie props.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Grand NE Loop — End HRB</span>
+            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Comprehensive</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime at dusk.<br>
+            <b style="color:var(--frost);">8 Dec</b> Dawn rime + drift boat. HSR Jilin → Changchun (30 min). City tour.<br>
+            <b style="color:var(--frost);">9 Dec</b> Film Studio + Puppet Palace. HSR → Harbin (1 hr).<br>
+            <b style="color:var(--frost);">10 Dec</b> Ice &amp; Snow World. Saint Sophia. Central Street.<br>
+            <b style="color:var(--frost);">11 Dec</b> Tiger Park. Beer Museum. Free evening.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day. Transfer to HRB airport hotel.<br>
+            <b style="color:var(--frost);">13 Dec</b> HRB 16:00 → CAN → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">💰 Best value<span class="tooltip">Most cities for the cost. Covers Jilin + Changchun + Harbin in one itinerary.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    </div>
+  </div>
+
+  <div class="ext-accordion">
+    <div class="ext-header" onclick="toggleExtended(this)">
+      <h2 class="section-title" style="margin:0; flex:1;"><span class="section-icon">🗺</span> Post-BDH — Fly out from Beijing (PEK)</h2>
+      <span class="open-tag">▾</span>
+    </div>
+    <div class="ext-body">
+      <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:var(--gold-light);">Kevin/Trina, John/Celine, Ronald/Jovelle</strong> returning from Beijing.</p>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#93c5fd; font-size:0.9rem; flex-shrink:0;">1</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime + Beijing Classic</span>
+            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Most popular</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,000–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin (2 hrs). Afternoon rime 雾凇.<br>
+            <b style="color:var(--frost);">8 Dec</b> Morning rime. HSR Jilin → Beijing (4–5 hrs, ¥300–500).<br>
+            <b style="color:var(--frost);">9 Dec</b> Forbidden City + Jingshan Park. Wangfujing Street.<br>
+            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall (cable car, toboggan). Pop Mart City evening.<br>
+            <b style="color:var(--frost);">11 Dec</b> Summer Palace + Temple of Heaven. Peking duck dinner.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free shopping / hutong walk. Last night in Beijing.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-purple" style="position:relative">🏯 Mutianyu Great Wall<span class="tooltip">Less touristy than Badaling. Cable car + toboggan slide. ¥65 entry + ¥120 cable car.</span></span>
+            <span class="pill pill-blue" style="position:relative">🎮 Pop Mart City<span class="tooltip">World's first Pop Mart IP theme park. Blind box rides &amp; art. Check popmartworld.com.</span></span>
+            <span class="pill pill-gold" style="position:relative">🦆 Peking duck<span class="tooltip">Quanjude or Dadong. ¥150–250/pax. Book ahead on Dianping.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">2</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing Direct + Great Wall Focus</span>
+            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Less travel</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → CGQ. Fly CGQ→PEK (~2 hrs, ¥500–800).<br>
+            <b style="color:var(--frost);">8 Dec</b> Forbidden City + Jingshan Park. Wangfujing.<br>
+            <b style="color:var(--frost);">9 Dec</b> Jinshanling Great Wall (less crowded, full day).<br>
+            <b style="color:var(--frost);">10 Dec</b> Summer Palace + Temple of Heaven. Pop Mart City.<br>
+            <b style="color:var(--frost);">11 Dec</b> 798 Art District. Hutong rickshaw tour.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day / National Museum. Last night.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">✈ CGQ→PEK flight<span class="tooltip">~1.5 hrs, ¥500–800. Multiple airlines. Book early for Dec.</span></span>
+            <span class="pill pill-gold" style="position:relative">🧱 Jinshanling Wall<span class="tooltip">Less restored, fewer crowds than Mutianyu. Full day hike. ¥65 entry.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">3</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Changchun Stop + Beijing</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Good value</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,000–4,500/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Changchun (2 hrs). Puppet Emperor Palace.<br>
+            <b style="color:var(--frost);">8 Dec</b> Film Studio morning. HSR Changchun → Beijing (4 hrs, ¥300–400).<br>
+            <b style="color:var(--frost);">9 Dec</b> Forbidden City + Jingshan. Wangfujing evening.<br>
+            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall. Pop Mart City.<br>
+            <b style="color:var(--frost);">11 Dec</b> Summer Palace + Temple of Heaven. Peking duck.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day / hutong tour. Last night.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">🏛 Puppet Palace<span class="tooltip">Fascinating WWII history. Puyi's former residence. ¥80 entry. Allow 2–3 hrs.</span></span>
+            <span class="pill pill-blue" style="position:relative">🚄 Changchun→Beijing HSR<span class="tooltip">~4 hrs, ¥300–400 2nd class. Comfortable, book on Trip.com.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing + Chengde Retreat</span>
+            <span style="font-size:0.68rem; background:rgba(83,74,183,0.25); color:#c4b5fd; border:1px solid rgba(83,74,183,0.35); border-radius:20px; padding:2px 8px;">Off the beaten path</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥3,500–5,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime 雾凇.<br>
+            <b style="color:var(--frost);">8 Dec</b> Morning rime. HSR Jilin → Beijing (4–5 hrs).<br>
+            <b style="color:var(--frost);">9 Dec</b> Forbidden City. Wangfujing.<br>
+            <b style="color:var(--frost);">10 Dec</b> Mutianyu Great Wall. Pop Mart City evening.<br>
+            <b style="color:var(--frost);">11 Dec</b> HSR Beijing → Chengde (2 hrs). Mountain Resort &amp; Eight Outer Temples.<br>
+            <b style="color:var(--frost);">12 Dec</b> Puning Temple (giant wooden Guanyin). Free afternoon.<br>
+            <b style="color:var(--frost);">13 Dec</b> HSR Chengde → Beijing (2 hrs). PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-blue" style="position:relative">🏯 Chengde Mountain Resort<span class="tooltip">UNESCO site. Qing dynasty imperial summer palace. ¥150 entry. HSR from Beijing 2 hrs.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
+      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
+        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
+            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Beijing Food Hop, Arcades &amp; Nightlife</span>
+            <span style="font-size:0.68rem; background:rgba(192,57,43,0.2); color:#fca5a5; border:1px solid rgba(192,57,43,0.35); border-radius:20px; padding:2px 8px;">Foodies · Fun</span>
+            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
+            <span style="font-size:0.68rem; color:var(--text-muted-dark);">¥2,500–4,000/pax</span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted-dark); line-height:1.7;">
+            <b style="color:var(--frost);">7 Dec</b> Check out BDH → Jilin. Rime 雾凇. HSR Jilin→Beijing next morning.<br>
+            <b style="color:var(--frost);">8 Dec</b> HSR to Beijing. Check in. Evening Wangfujing snack street — scorpions, candied haw, Beijing yoghurt.<br>
+            <b style="color:var(--frost);">9 Dec</b> Pop Mart City (world's first IP theme park, blind box rides). Guijie (Ghost Street) for crayfish &amp; Sichuan hot pot dinner. Houhai bar street for drinks.<br>
+            <b style="color:var(--frost);">10 Dec</b> Sega Joypolis indoor theme park (arcade games, roller coaster VR). Wangfujing night market. Sanlitun bar district for craft beer &amp; cocktails.<br>
+            <b style="color:var(--frost);">11 Dec</b> Beijing LEGO Store &amp; indoor playground. Peking duck farewell dinner. Last night rooftop bar.<br>
+            <b style="color:var(--frost);">12 Dec</b> Free day for last eats &amp; shopping. PEK airport hotel.<br>
+            <b style="color:var(--frost);">13/14 Dec</b> PEK → SIN.
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+            <span class="pill pill-gold" style="position:relative">🎮 Pop Mart City<span class="tooltip">World's first immersive Pop Mart IP theme park. Blind box characters, rides, art. Check popmartworld.com for tickets.</span></span>
+            <span class="pill pill-purple" style="position:relative">🎪 Sega Joypolis<span class="tooltip">Indoor arcade in Chaoyang. VR rides, racing sims, claw machines. ¥200–300 for all-day pass. Fun for kids and adults.</span></span>
+            <span class="pill pill-blue" style="position:relative">🍺 Sanlitun bars<span class="tooltip">Beijing's main nightlife district. Craft beer at Jing-A, cocktails at Infusion Room, or quiet bars in the hutongs.</span></span>
+            <span class="pill pill-green" style="position:relative">🦐 Guijie food street<span class="tooltip">Ghost Street (簋街) — 1.5 km of restaurants. Famous for spicy crayfish (麻辣小龙虾), hot pot, and skewers. Open till 5am.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    </div>
+  </div>
+
   <!-- COSTS -->
   <h2 class="section-title"><span class="section-icon">💰</span> Cost overview</h2>
   <div class="cost-section">
@@ -1494,11 +1530,27 @@ function toggleDay(header) {
   }
 }
 
-// Open day 1 by default
+// Expand all itinerary days by default
 document.addEventListener('DOMContentLoaded', function() {
-  const first = document.querySelector('.day-header');
-  if (first) toggleDay(first);
+  document.querySelectorAll('.day-header').forEach(function(h) {
+    const body = h.nextElementSibling;
+    const tag = h.querySelector('.open-tag');
+    body.classList.add('open');
+    tag.textContent = '▴';
+  });
 });
+
+function toggleExtended(header) {
+  const body = header.nextElementSibling;
+  const tag = header.querySelector('.open-tag');
+  if (body.classList.contains('open')) {
+    body.classList.remove('open');
+    tag.textContent = '▾';
+  } else {
+    body.classList.add('open');
+    tag.textContent = '▴';
+  }
+}
 </script>
 </body>
 </html>
