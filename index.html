@@ -574,6 +574,137 @@
     font-weight: 600;
     color: #f5d98a;
   }
+
+  /* === VILLAGE INFO TABS === */
+  .vi-wrap {
+    margin-top: 18px;
+    border: 1px solid rgba(45,122,74,0.35);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: rgba(10,22,40,0.4);
+  }
+  .vi-tabs {
+    display: flex;
+    overflow-x: auto;
+    background: rgba(26,74,46,0.25);
+    border-bottom: 1px solid rgba(45,122,74,0.35);
+    scrollbar-width: none;
+  }
+  .vi-tabs::-webkit-scrollbar { display: none; }
+  .vi-tab {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 10px 16px;
+    font-size: 0.77rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted-dark);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .vi-tab:hover { color: var(--frost); background: rgba(255,255,255,0.04); }
+  .vi-tab.active { color: #6ee79a; border-bottom-color: #6ee79a; background: rgba(26,74,46,0.2); }
+
+  .vi-panel { display: none; padding: 16px; }
+  .vi-panel.active { display: block; }
+
+  .vi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+  }
+  .vi-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,223,245,0.12);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    transition: border-color 0.2s;
+  }
+  .vi-card:hover { border-color: rgba(200,223,245,0.28); }
+  .vi-card-must {
+    border-color: rgba(45,122,74,0.45);
+    background: rgba(26,74,46,0.2);
+  }
+  .vi-card-gold {
+    border-color: rgba(201,146,58,0.35);
+    background: rgba(201,146,58,0.06);
+  }
+  .vi-card-green {
+    border-color: rgba(45,122,74,0.3);
+    background: rgba(26,74,46,0.12);
+  }
+  .vi-card-purple {
+    border-color: rgba(83,74,183,0.3);
+    background: rgba(83,74,183,0.08);
+  }
+  .vi-card-info {
+    border-color: rgba(37,99,168,0.3);
+    background: rgba(37,99,168,0.08);
+  }
+  .vi-card-warn {
+    border-color: rgba(192,57,43,0.35);
+    background: rgba(192,57,43,0.08);
+  }
+  .vi-must-tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6ee79a;
+    background: rgba(26,74,46,0.5);
+    border: 1px solid rgba(45,122,74,0.4);
+    border-radius: 20px;
+    padding: 2px 8px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .vi-card-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--snow-white);
+    margin-bottom: 7px;
+  }
+  .vi-card-body {
+    font-size: 0.78rem;
+    color: var(--text-muted-dark);
+    line-height: 1.6;
+  }
+  .vi-card-body strong { color: var(--frost); }
+
+  .vi-schedule { display: flex; flex-direction: column; gap: 4px; }
+  .vi-sch-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 0.76rem;
+  }
+  .vi-sch-time {
+    font-variant-numeric: tabular-nums;
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+  .vi-sch-lvl {
+    font-size: 0.68rem;
+    font-weight: 600;
+    background: rgba(37,99,168,0.25);
+    border: 1px solid rgba(37,99,168,0.35);
+    color: #93c5fd;
+    border-radius: 4px;
+    padding: 1px 6px;
+    min-width: 80px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .vi-lvl-b {
+    background: rgba(26,74,46,0.35);
+    border-color: rgba(45,122,74,0.4);
+    color: #6ee79a;
+  }
 </style>
 </head>
 <body>
@@ -902,48 +1033,305 @@
         </div>
         <div class="day-body">
           <div class="day-body-inner">
+
+            <!-- BOOKING SUMMARY -->
             <div class="clubmed-block">
               <h3>🎿 4 Nights · All 6 Families · Fully Booked via Chan Brothers</h3>
-              <p style="font-size:0.8rem; color:var(--text-muted-dark); margin-bottom:12px;">3 Dec check-in → 7 Dec check-out · Rooms: 4× Family Deluxe + 3× King Deluxe</p>
-              <div class="amenity-grid">
-                <div class="amenity-item"><span class="amenity-dot"></span>All meals included</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>All-day snacking</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Unlimited bar (alcohol &amp; non-alcohol)</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Ski passes (from day 2)</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Group ski/snowboard lessons</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Fitness classes</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Sports centre</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Japanese onsen / spa</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Indoor water play</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Hot pot dining</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>Kids club</div>
-                <div class="amenity-item"><span class="amenity-dot"></span>CMLink SIM card</div>
+              <p style="font-size:0.8rem; color:var(--text-muted-dark); margin-bottom:10px;">3 Dec check-in (from 15:00) → 7 Dec check-out (by 11:00) · Rooms: 4× Family Deluxe + 3× King Deluxe</p>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+                <span style="font-size:0.72rem; background:rgba(45,122,74,0.25); border:1px solid rgba(45,122,74,0.4); color:#6ee79a; border-radius:20px; padding:3px 10px;">✅ All meals &amp; drinks included</span>
+                <span style="font-size:0.72rem; background:rgba(45,122,74,0.25); border:1px solid rgba(45,122,74,0.4); color:#6ee79a; border-radius:20px; padding:3px 10px;">✅ Ski passes &amp; lessons</span>
+                <span style="font-size:0.72rem; background:rgba(45,122,74,0.25); border:1px solid rgba(45,122,74,0.4); color:#6ee79a; border-radius:20px; padding:3px 10px;">✅ Kids Club included</span>
+                <span style="font-size:0.72rem; background:rgba(45,122,74,0.25); border:1px solid rgba(45,122,74,0.4); color:#6ee79a; border-radius:20px; padding:3px 10px;">✅ Hot Spring (1 free entry/day)</span>
+                <span style="font-size:0.72rem; background:rgba(201,146,58,0.15); border:1px dashed rgba(201,146,58,0.4); color:var(--gold-light); border-radius:20px; padding:3px 10px;">* SPA, Boutique, Billiards at extra cost</span>
+                <span style="font-size:0.72rem; background:rgba(201,146,58,0.15); border:1px dashed rgba(201,146,58,0.4); color:var(--gold-light); border-radius:20px; padding:3px 10px;">** Le Petit Bus Rouge &amp; KTV need advance reservation</span>
               </div>
             </div>
-            <div class="day-pills" style="margin-top:14px;">
-              <div class="pill pill-green" style="position:relative">
-                🌡 Onsen / spa
-                <span class="tooltip">Club Med Beidahu has an in-house Japanese onsen. Not as large as Changbaishan's 3000sqm wellness oasis, but good for families.</span>
+
+            <!-- VILLAGE INFO TABS -->
+            <div class="vi-wrap">
+              <div class="vi-tabs" role="tablist">
+                <button class="vi-tab active" onclick="switchViTab(this,'vi-resort')" role="tab">🏨 Resort</button>
+                <button class="vi-tab" onclick="switchViTab(this,'vi-food')" role="tab">🍽 Food &amp; Bar</button>
+                <button class="vi-tab" onclick="switchViTab(this,'vi-ski')" role="tab">🎿 Ski</button>
+                <button class="vi-tab" onclick="switchViTab(this,'vi-wellness')" role="tab">💆 Wellness</button>
+                <button class="vi-tab" onclick="switchViTab(this,'vi-kids')" role="tab">👧 Kids Club</button>
+                <button class="vi-tab" onclick="switchViTab(this,'vi-extras')" role="tab">🎮 Extras</button>
               </div>
-              <div class="pill pill-blue" style="position:relative">
-                🎿 Non-steep slopes
-                <span class="tooltip">Beidahu known for beginner-friendly slopes — great for kids and first-timers. Lifts and runs suitable for mixed skill levels.</span>
+
+              <!-- RESORT TAB -->
+              <div class="vi-panel active" id="vi-resort">
+                <div class="vi-grid">
+                  <div class="vi-card vi-card-must">
+                    <div class="vi-card-label">24h Reception</div>
+                    <div class="vi-card-body">Dial extension <strong>#0</strong> anytime. Early check-in available (ask reception for rates). Late check-out <strong>80 RMB/hr</strong>. Club Med Pass requires <strong>5,000 RMB deposit</strong> per room.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">⏰ Check-in / Check-out</div>
+                    <div class="vi-card-body">Check-in from <strong>15:00</strong> · Check-out by <strong>11:00</strong></div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🔑 Room Safe</div>
+                    <div class="vi-card-body">Set your own 4-digit code, press 'lock'. Max: <strong>€1,000 cash</strong> / <strong>€2,500 jewellery</strong>. Leave safe open before checkout. Larger safe available at reception.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🛒 Boutique (Tel: 6025)</div>
+                    <div class="vi-card-body">@ Botanic Building (A) 1st Floor<br><strong>08:30–13:00 / 15:00–19:00</strong><br>Ski wear rental available here. All charges go to room account — no cash/credit card accepted at resort.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🎿 Ski Card Making</div>
+                    <div class="vi-card-body">@ Ski Hall · <strong>08:30–21:30</strong><br>Get your ski cards made here. Ski rentals available from 15:00. Return gear before check-out. No ski shoes indoors!</div>
+                  </div>
+                  <div class="vi-card vi-card-info">
+                    <div class="vi-card-label">📸 Photo Shop</div>
+                    <div class="vi-card-body">@ Cinema Building (B) 1st Floor<br><strong>10:00–14:00 / 16:00–21:00</strong></div>
+                  </div>
+                  <div class="vi-card vi-card-warn">
+                    <div class="vi-card-label">🆘 Emergencies</div>
+                    <div class="vi-card-body">Dial extension <strong>7777</strong> for resort emergencies.<br>Nearest hospital: Yongji Hospital · 0432-64222943<br>No. 149, Jianshe Rd., Koqian Town, Yongji County</div>
+                  </div>
+                  <div class="vi-card vi-card-info">
+                    <div class="vi-card-label">📍 Resort Address</div>
+                    <div class="vi-card-body">Club Med Beidahu · Jilin Beidahu Sports Tourism Economic Development Zone, Jilin City, Jilin Province, China 13224<br>Tel: +86 432 64201222</div>
+                  </div>
+                  <div class="vi-card vi-card-info" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px;">
+                    <div class="vi-card-label" style="width:100%;">📱 WeChat Mini Program</div>
+                    <img src="data:image/png;base64,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" alt="Club Med Beidahu WeChat Mini Program QR Code" style="width:120px; height:120px; object-fit:contain; border-radius:6px; background:#fff; padding:6px; display:block;" />
+                    <div class="vi-card-body" style="font-size:0.72rem;">Scan to access the daily programme, book <strong>Le Petit Bus Rouge</strong>, reserve <strong>KTV</strong>, and manage kids' activities.</div>
+                  </div>
+                </div>
               </div>
-              <div class="pill pill-purple">
-                👶 Kids club on-site
+
+              <!-- FOOD & BAR TAB -->
+              <div class="vi-panel" id="vi-food">
+                <div class="vi-grid">
+                  <div class="vi-card vi-card-must">
+                    <div class="vi-must-tag">MUST-TRY</div>
+                    <div class="vi-card-label">🍜 Chinese Cuisine Journey</div>
+                    <div class="vi-card-body">The resort's signature dining experience. Don't miss it — authentic Northeast Chinese flavours in an all-inclusive setting.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🍽 The Lodge Restaurant</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">07:00–09:30</span><span>Breakfast Buffet</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">12:00–14:00</span><span>Lunch Buffet</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">14:00–17:00</span><span>Noodle Club</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">18:00–20:45</span><span>Dinner Buffet</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card vi-card-gold">
+                    <div class="vi-card-label">🍲 Le Petit Bus Rouge** <span style="font-size:0.65rem; color:#c9a15a;">(advance reservation)</span></div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">18:00–20:30</span><span>Hot Pot</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">21:00–22:30</span><span>Noodle Club</span></div>
+                      </div>
+                      <div style="margin-top:8px; font-size:0.72rem; color:#c9a15a; line-height:1.6;">
+                        📱 Reserve via WeChat Mini Program — starting 12:30pm, one day in advance.<br>
+                        Max 4 seats per room number. First-come first-served. Check resort program for opening days.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🥐 Snacking at the Bar</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">09:30–12:00</span><span>Happy Croissant</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">15:30–17:00</span><span>Ski Return @ Lobby</span></div>
+                      </div>
+                      <div style="margin-top:6px; font-size:0.75rem; color:var(--text-muted-dark);">Hot snacks waiting when you come off the slopes 🎿</div>
+                    </div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🍵 Pine Lounge</div>
+                    <div class="vi-card-body">@ Botanic Building (A) 1st Floor<br><strong>09:00–21:00</strong><br>Relaxed lounge for hot drinks and chilling between runs.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🍺 Ula Bar</div>
+                    <div class="vi-card-body">@ Cinema Building (B) 1st Floor<br><strong>17:30–23:30</strong><br>Après-ski drinks, cocktails, and evening socialising. All inclusive!</div>
+                  </div>
+                </div>
               </div>
-              <div class="pill pill-gold" style="position:relative">
-                🍲 Hot pot included
-                <span class="tooltip">Club Med Beidahu includes a hot pot dining experience as part of the all-inclusive package.</span>
+
+              <!-- SKI TAB -->
+              <div class="vi-panel" id="vi-ski">
+                <div style="font-size:0.75rem; color:var(--text-muted-dark); margin-bottom:12px;">Sign up for lessons at the <strong style="color:var(--frost);">Ski Sign-Up Counter</strong> · 18:00–20:00 each evening. All skill levels welcome!</div>
+                <div class="vi-grid">
+                  <div class="vi-card">
+                    <div class="vi-card-label">🎿 Adult Ski Lessons (12yrs+)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-lvl vi-lvl-b">Beginner</span><span>10:00–12:15 / 13:45–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SKI 1</span><span>10:00–12:15 / 13:45–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SKI 2</span><span>09:45–12:00 / 13:45–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SKI 3</span><span>09:45–12:00 / 13:45–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SKI 4</span><span>09:30–12:00 / 13:30–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SKI 5</span><span>09:15–11:45 / 13:15–15:45</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🏂 Adult Snowboard Lessons (12yrs+)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-lvl vi-lvl-b">Beginner</span><span>09:45–12:00 / 13:45–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SB 1</span><span>09:45–12:00 / 13:45–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SB 2</span><span>09:30–12:00 / 13:30–16:00</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SB 3</span><span>09:15–11:45 / 13:15–15:45</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">SB 4</span><span>09:15–11:45 / 13:15–15:45</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card vi-card-green">
+                    <div class="vi-card-label">👦 Kids Ski Lessons (4–11 yrs)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-lvl vi-lvl-b">Kids Garden</span><span>09:45–11:45 / 13:45–15:45</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Dragon</span><span>09:30–11:45 / 13:30–15:45</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Trident 1</span><span>09:30–11:45 / 13:30–15:45</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Trident 2</span><span>09:15–11:30 / 13:15–15:30</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Trident 3</span><span>09:15–11:30 / 13:15–15:30</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Trident 🥉</span><span>09:00–11:30 / 13:00–15:30</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Trident 🥇</span><span>09:00–11:30 / 13:00–15:30</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card vi-card-green">
+                    <div class="vi-card-label">🏂 Kids Snowboard Lessons (8–11 yrs)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-lvl vi-lvl-b">Rider</span><span>09:30–11:30 / 13:30–15:30</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Rider 1</span><span>09:15–11:30 / 13:15–15:30</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Rider 2</span><span>09:00–11:15 / 13:00–15:15</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-lvl">Rider 3</span><span>09:00–11:30 / 13:00–15:30</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🛍 Ski Pro Shop*</div>
+                    <div class="vi-card-body"><strong>08:30–21:30</strong><br>All charges go to room account (no cash/credit card). Ski rentals from 15:00 on arrival day. Return gear before check-out. Ski shoes must not be worn indoors.</div>
+                  </div>
+                  <div class="vi-card vi-card-info">
+                    <div class="vi-card-label">📋 Sign-Up Reminder</div>
+                    <div class="vi-card-body">Mini Club registration &amp; kids' ski sign-up at the <strong>Ski Sign-Up Counter</strong>, 18:00–20:00 every evening. Don't miss the evening show at <strong>20:45</strong>!</div>
+                  </div>
+                </div>
               </div>
-              <div class="pill pill-tbc">
-                ⏳ Day trip: West Slope CBS (if arranged by agent)
+
+              <!-- WELLNESS TAB -->
+              <div class="vi-panel" id="vi-wellness">
+                <div class="vi-grid">
+                  <div class="vi-card vi-card-must">
+                    <div class="vi-must-tag">MUST-TRY</div>
+                    <div class="vi-card-label">♨️ Hot Spring (opposite resort)</div>
+                    <div class="vi-card-body"><strong>14:00–00:00</strong> (last admission 23:00)<br><strong style="color:#6ee79a;">1 free entry per person per day included!</strong> Perfect après-ski recovery. Cross the road from the resort.</div>
+                  </div>
+                  <div class="vi-card vi-card-gold">
+                    <div class="vi-card-label">💆 Club Med Spa by AHAVA* <span style="font-size:0.65rem; color:#c9a15a;">(reservation required)</span></div>
+                    <div class="vi-card-body">@ Botanic Building (A) B1 Floor<br><strong>13:00–23:00</strong><br>Tel: 182-4323-8411 (ext. 8080)<br>Advance booking required. Extra cost applies.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">💪 GYM (18yrs+)</div>
+                    <div class="vi-card-body">Open <strong>24 hours</strong>. Great for an early morning session before the slopes open.</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🧘 Fitness Lessons (16yrs+)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">09:00–09:45</span><span>Warm Up Yoga</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">10:30–11:15</span><span>Core Training</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">15:00–15:45</span><span>Dance Fit (Tue–Sun)</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">15:00–15:45</span><span>Body Ballet (Mon)</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">16:30–17:15</span><span>Relax Yoga</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🥾 Sports Activities</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">10:15–11:15</span><span>Nature Walk</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">14:00–15:00</span><span>Indoor Sports Tournament</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">14:15–15:15</span><span>Mountain Visit via Gondola</span></div>
+                      </div>
+                      <div style="margin-top:6px; font-size:0.72rem; color:var(--text-muted-dark);">Meet at Fitness Center 15 min before Nature Walk or Gondola.</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+
+              <!-- KIDS CLUB TAB -->
+              <div class="vi-panel" id="vi-kids">
+                <div style="font-size:0.75rem; color:var(--text-muted-dark); margin-bottom:12px;">All kids club areas at <strong style="color:var(--frost);">Cinema Building (B), 1st Floor</strong>. Register at Ski Sign-Up Counter, 18:00–20:00.</div>
+                <div class="vi-grid">
+                  <div class="vi-card vi-card-purple">
+                    <div class="vi-card-label">🍼 Petit Club* (2–3 yrs)</div>
+                    <div class="vi-card-body"><strong>08:30–17:00</strong><br>Extra cost applies. Perfect for toddlers. Full day supervision while parents ski!</div>
+                  </div>
+                  <div class="vi-card vi-card-purple">
+                    <div class="vi-card-label">🎨 Mini Club (4–10 yrs)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">08:30–17:00</span><span>Full day activities</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">18:30–20:15</span><span>Evening programme</span></div>
+                      </div>
+                      <div style="margin-top:6px; font-size:0.72rem; color:var(--text-muted-dark);">Afternoon event: 16:00–17:00 · Night event: 19:30–20:15</div>
+                    </div>
+                  </div>
+                  <div class="vi-card vi-card-purple">
+                    <div class="vi-card-label">🎯 Teens Club (11–17 yrs)</div>
+                    <div class="vi-card-body">
+                      <div class="vi-schedule">
+                        <div class="vi-sch-row"><span class="vi-sch-time">16:00–17:00</span><span>Afternoon event</span></div>
+                        <div class="vi-sch-row"><span class="vi-sch-time">18:00–20:15</span><span>Night event</span></div>
+                      </div>
+                      <div style="margin-top:6px; font-size:0.72rem; color:var(--text-muted-dark);">Teens ski and snowboard lessons run in the morning — afternoons are club time!</div>
+                    </div>
+                  </div>
+                  <div class="vi-card vi-card-info">
+                    <div class="vi-card-label">📅 Register on arrival</div>
+                    <div class="vi-card-body">Mini Club registration &amp; kids' ski sign-up at the Ski Sign-Up Counter, <strong>18:00–20:00</strong>. Register on your first evening (3 Dec) to secure slots for all 4 days. Evening show at <strong>20:45</strong> nightly!</div>
+                  </div>
+                  <div class="vi-card vi-card-info">
+                    <div class="vi-card-label">📱 WeChat Mini Program</div>
+                    <div class="vi-card-body">Download the Club Med WeChat Mini Program to see the full daily programme, book Le Petit Bus Rouge, reserve KTV, and track your kids' activities. Set it up as soon as you arrive!</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EXTRAS TAB -->
+              <div class="vi-panel" id="vi-extras">
+                <div class="vi-grid">
+                  <div class="vi-card">
+                    <div class="vi-card-label">🎱 Recreation Room</div>
+                    <div class="vi-card-body">@ Cinema Building (B) B1 Floor · <strong>14:00–23:00</strong><br>Ping pong · Mahjong · Board games (all free!)<br><strong style="color:#c9a15a;">Billiards (18yrs+)*</strong> — 80 RMB/hr, advance reservation required</div>
+                  </div>
+                  <div class="vi-card vi-card-gold">
+                    <div class="vi-card-label">🎤 KTV** <span style="font-size:0.65rem; color:#c9a15a;">(online reservation required)</span></div>
+                    <div class="vi-card-body"><strong>14:00–23:00</strong> (last booking at 22:00)<br>📱 Book via WeChat Mini Program. Extra cost applies. Perfect for a group night in — 6 families in KTV? 🎵</div>
+                  </div>
+                  <div class="vi-card">
+                    <div class="vi-card-label">🎭 Evening Show</div>
+                    <div class="vi-card-body">Every night at <strong>20:45</strong> — Club Med's famous evening entertainment. Don't miss it! Held at the Theater, Cinema Building.</div>
+                  </div>
+                  <div class="vi-card vi-card-info">
+                    <div class="vi-card-label">📱 WeChat Mini Program Tips</div>
+                    <div class="vi-card-body">Use the app to book Le Petit Bus Rouge (1 day ahead from 12:30pm), KTV, and view daily schedules. Make sure everyone downloads it on Day 1!</div>
+                  </div>
+                  <div class="vi-card vi-card-warn">
+                    <div class="vi-card-label">💳 Payment at Resort</div>
+                    <div class="vi-card-body">All extra charges billed to your <strong>room account</strong>. No cash or credit card accepted at resort outlets. Settle at check-out. Club Med Pass: 5,000 RMB deposit per room.</div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end vi-wrap -->
+
             <ul class="event-list" style="margin-top:14px;">
               <li class="event-item">
                 <span class="event-time">7 Dec</span>
-                <span class="event-text"><strong>Check-out by 10:00.</strong> Families split — some head to Jilin/Beijing, arrangements TBC per family.</span>
+                <span class="event-text"><strong>Check-out by 11:00.</strong> Families split — some head to Jilin/Beijing, arrangements TBC per family.</span>
               </li>
             </ul>
           </div>
@@ -1565,6 +1953,14 @@ function updateCountdown() {
   const weeks = Math.floor(totalDays / 7);
   const days = totalDays % 7;
   document.getElementById('countdown-display').textContent = months + 'mo / ' + weeks + 'w / ' + totalDays + 'd';
+}
+
+function switchViTab(btn, panelId) {
+  const wrap = btn.closest('.vi-wrap');
+  wrap.querySelectorAll('.vi-tab').forEach(t => t.classList.remove('active'));
+  wrap.querySelectorAll('.vi-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
 }
 
 function toggleExtended(header) {
