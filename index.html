@@ -705,6 +705,57 @@
     border-color: rgba(45,122,74,0.4);
     color: #6ee79a;
   }
+
+/* HRB family route selector: scoped to this section */
+#hrbAccordion { scroll-margin-top:24px; }
+#hrbAccordion .hrb-toggle { width:100%; border:0; text-align:left; background:transparent; color:inherit; font:inherit; }
+#hrbAccordion .hrb-intro { padding:25px; border:1px solid #46617a; border-radius:16px; background:radial-gradient(ellipse at top right,#254b63 0%,transparent 65%),#13273d; margin-bottom:18px; }
+#hrbAccordion .hrb-eyebrow { color:#80dccd; font-size:.68rem; letter-spacing:2px; font-weight:600; margin-bottom:10px; }
+#hrbAccordion .hrb-intro h3 { font:600 clamp(1.6rem,4vw,2.35rem)/1.18 'Playfair Display',serif; color:#fff; margin-bottom:12px; }
+#hrbAccordion p { font-size:.83rem; line-height:1.7; color:#bed0e4; }
+#hrbAccordion strong { color:#f1f6ff; }
+#hrbAccordion .hrb-meta { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+#hrbAccordion .hrb-meta span { padding:6px 10px; border:1px solid #486078; border-radius:20px; font-size:.72rem; color:#eef5ff; }
+#hrbAccordion .hrb-picks { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:16px 0; }
+#hrbAccordion .hrb-pick { display:block; padding:14px; background:#1b2f45; border-radius:10px; border:1px solid #385269; text-decoration:none; color:#fff; font-size:.82rem; line-height:1.5; }
+#hrbAccordion .hrb-pick small { display:block; color:#8fdccf; font-size:.65rem; letter-spacing:1px; margin-bottom:4px; }
+#hrbAccordion .hrb-note { padding:14px 16px; border-left:3px solid #d5ab60; background:#282b30; margin:16px 0; border-radius:0 8px 8px 0; }
+#hrbAccordion a { color:#9cd9ff; text-underline-offset:3px; }
+#hrbAccordion .hrb-filters { display:flex; flex-wrap:wrap; gap:7px; margin:20px 0 10px; }
+#hrbAccordion .hrb-filters button { cursor:pointer; background:#162a41; color:#d4e2f3; border:1px solid #496079; border-radius:20px; padding:8px 12px; font:500 .74rem 'Inter',sans-serif; }
+#hrbAccordion .hrb-filters button[aria-pressed="true"] { background:#a4e2d7; border-color:#a4e2d7; color:#0a2433; }
+#hrbAccordion :is(button,a,summary):focus-visible { outline:3px solid #f0c87a; outline-offset:4px; }
+#hrbAccordion .hrb-count { font-size:.72rem; color:#a8bed5; margin-bottom:12px; }
+#hrbAccordion .hrb-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; align-items:start; }
+#hrbAccordion .hrb-card { background:#12253b; border:1px solid #354e68; border-radius:14px; overflow:hidden; scroll-margin-top:20px; }
+#hrbAccordion .hrb-card[hidden] { display:none; }
+#hrbAccordion .hrb-card:first-child { border-color:#75c8b7; }
+#hrbAccordion .hrb-card-top { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; background:linear-gradient(105deg,#254c59,#233553); }
+#hrbAccordion .hrb-card[data-kind="food"] .hrb-card-top { background:linear-gradient(105deg,#614731,#332d4c); }
+#hrbAccordion .hrb-card[data-kind="unusual"] .hrb-card-top { background:linear-gradient(105deg,#403d68,#203e53); }
+#hrbAccordion .hrb-number { font-size:1.45rem; font-weight:600; color:#fff; }
+#hrbAccordion .hrb-badge { font-size:.68rem; color:#fff; padding:5px 8px; border:1px solid #ffffff50; border-radius:20px; }
+#hrbAccordion .hrb-card-content { padding:18px; }
+#hrbAccordion .hrb-city { color:#9ab7d1; font-size:.64rem; letter-spacing:1.4px; margin-bottom:8px; }
+#hrbAccordion .hrb-card h3 { font:600 1.25rem/1.3 'Playfair Display',serif; color:#fff; margin-bottom:10px; }
+#hrbAccordion .hrb-nights { margin:12px 0; padding:9px 10px; background:#ffffff07; border-radius:6px; font-size:.72rem; line-height:1.55; color:#e5c789; }
+#hrbAccordion .hrb-fit { display:grid; gap:8px; margin:12px 0; }
+#hrbAccordion .hrb-fit p { font-size:.76rem; }
+#hrbAccordion details { border-top:1px solid #ffffff1c; margin-top:15px; padding-top:12px; }
+#hrbAccordion summary { cursor:pointer; color:#94dece; font-size:.8rem; font-weight:600; line-height:1.5; }
+#hrbAccordion .hrb-stop { margin-top:15px; }
+#hrbAccordion h4 { color:#f0f6ff; font-size:.81rem; line-height:1.5; margin-bottom:4px; }
+#hrbAccordion .hrb-stop p, #hrbAccordion .hrb-detail p { font-size:.77rem; }
+#hrbAccordion .hrb-days { list-style:none; margin:15px 0; padding:0; }
+#hrbAccordion .hrb-days li { font-size:.75rem; line-height:1.65; color:#c4d6e9; padding:7px 0; border-bottom:1px solid #ffffff0d; }
+#hrbAccordion .hrb-detail { margin:13px 0; }
+#hrbAccordion .hrb-sources { display:flex; flex-direction:column; gap:7px; margin-top:14px; font-size:.69rem; line-height:1.5; }
+#hrbAccordion .hrb-practical { margin-top:20px; padding:20px; background:#172b40; border:1px solid #3e586d; border-radius:12px; }
+#hrbAccordion .hrb-practical h3 { font-size:1rem; color:#fff; margin-bottom:12px; }
+#hrbAccordion .hrb-practical p + p { margin-top:12px; }
+@media(max-width:650px) { #hrbAccordion .hrb-grid,#hrbAccordion .hrb-picks { grid-template-columns:1fr; } #hrbAccordion .hrb-intro { padding:18px; } #hrbAccordion .section-title { font-size:1.15rem; } }
+@media print { #hrbAccordion .ext-body { display:block; } #hrbAccordion .hrb-filters { display:none; } #hrbAccordion .hrb-grid { display:block; } #hrbAccordion .hrb-card { break-inside:avoid; margin-bottom:16px; } }
+
 </style>
 </head>
 <body>
@@ -1446,275 +1497,149 @@
   </div><!-- end timeline -->
 
 
-  <div class="ext-accordion">
-    <div class="ext-header" onclick="toggleExtended(this)">
-      <h2 class="section-title" style="margin:0; flex:1;"><span class="section-icon">🗺</span> Post-BDH — Fly out from Harbin (HRB)</h2>
-      <span class="open-tag">▾</span>
-    </div>
-    <div class="ext-body">
-      <p style="font-size:0.85rem; color:var(--text-muted-dark); margin-bottom:16px;">5 options for <strong style="color:#93c5fd;">David/Joelle</strong> (HRB→CAN→SIN Dec 13) and any other families routing through Harbin. All itineraries designed for <strong style="color:var(--gold-light);">family of 4 (2A + teens 12 &amp; 14)</strong> — timings, meals, transport, and max 3hrs per place included.</p>
-      <div style="display:flex; flex-direction:column; gap:14px;">
-
-    <!-- OPTION 1 ★ -->
-    <div style="background:rgba(37,99,168,0.06); border:2px solid rgba(37,99,168,0.4); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(37,99,168,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:700; color:#93c5fd; font-size:1rem; flex-shrink:0;">★</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Harbin Family Fun</span>
-            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">★ Best for David/Joelle</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">~¥2,800–3,800/pax</span>
-          </div>
-          <div style="font-size:0.76rem; color:var(--text-muted-dark); margin-bottom:8px; font-style:italic;">Ice fishing · Sega Joypolis · Siberian Tiger Park · Ice &amp; Snow World ★ · Polar Park · Pop Mart · Haidilao · Rooftop bar · Full timing &amp; meals</div>
-          <div style="display:flex; flex-direction:column; gap:5px;">
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Mon 7 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                🚐 <strong style="color:var(--frost);">08:00</strong> BDH→Jilin transfer (2hr, ¥400-600). 🌫 <strong style="color:var(--frost);">10:30</strong> Rime ice 雾凇 (free, 1.5hr). 🍜 <strong style="color:var(--frost);">12:30</strong> Lunch: 乌拉火锅 Wula hot pot (¥60-80). 🚄 <strong style="color:var(--frost);">14:30</strong> HSR Jilin→Harbin (1.5hr, ¥100-140). 🏨 <strong style="color:var(--frost);">16:00</strong> Check in. 🚶 <strong style="color:var(--frost);">17:30</strong> Central Street walk. 🍽 <strong style="color:var(--frost);">19:00</strong> Dinner: 华梅西餐厅 (¥80-120). 🍺 <strong style="color:var(--frost);">20:30</strong> Parents: Mango Bar (¥40-60/drink).
-              </div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Tue 8 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                🚕 <strong style="color:var(--frost);">09:30</strong> Didi→Songhua River (¥20-30, 20min). 🎣 <strong style="color:var(--frost);">10:00</strong> Ice fishing (¥100-150/pax, 2hr, heated tent). 🍽 <strong style="color:var(--frost);">12:30</strong> Lunch: 老厨家 锅包肉 (¥50-70). ❄ <strong style="color:var(--frost);">14:00</strong> Didi→Ice &amp; Snow World (¥25-35, entry ¥330/¥230). <span style="color:var(--gold-light);">★ Strongly recommended: arrive 14:00, day sculptures → 16:30 sunset → 17:00 night lights, leave ~20:00 (5hr total — worth it)</span>. 🔥 <strong style="color:var(--frost);">20:00</strong> Didi back. Hot pot: 大丽火锅 (¥80-120).
-              </div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Wed 9 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                🚕 <strong style="color:var(--frost);">10:00</strong> Didi→西城红场 mall (¥20-30). 🎮 <strong style="color:var(--frost);">10:30</strong> Sega Joypolis 世嘉 — VR, racing, claw machines (¥200-300 all-day, 2.5hr). 🍱 <strong style="color:var(--frost);">13:00</strong> Lunch: food court (¥40-60). 🐯 <strong style="color:var(--frost);">14:00</strong> Didi→Tiger Park 东北虎林园 (¥30-40). <strong style="color:var(--frost);">14:30</strong> Bus safari + feeding (¥95/¥50, 2hr). 🍺 <strong style="color:var(--frost);">16:30</strong> Didi→Beer Museum (¥15-20, ¥50 incl tasting, 1.5hr). 🍢 <strong style="color:var(--frost);">18:30</strong> Dinner: 金刚山烧烤 skewers (¥60-80). 🌃 <strong style="color:var(--frost);">20:00</strong> Central Street night.
-              </div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Thu 10 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                ⛪ <strong style="color:var(--frost);">09:00</strong> Walk→Saint Sophia Cathedral (free exterior, ¥20 museum, 45min). 🚕 <strong style="color:var(--frost);">10:00</strong> Didi→Polar Park 极地馆 (¥30-40). 🐧 <strong style="color:var(--frost);">10:30</strong> Beluga whales, penguins, seal show (¥160/¥80, 2.5hr). 🥟 <strong style="color:var(--frost);">13:00</strong> Lunch: Russian restaurant (¥60-80). 🚕 <strong style="color:var(--frost);">14:30</strong> Didi→Pop Mart / Central Street shopping (¥15-20). 🎁 <strong style="color:var(--frost);">15:00</strong> Teens choose — blind boxes, souvenirs (2hr). 🔥 <strong style="color:var(--frost);">18:00</strong> Haidilao 海底捞 hot pot (¥100-150, teens deals). 🍸 <strong style="color:var(--frost);">20:30</strong> Parents rooftop: 香格里拉 bar (¥50-80).
-              </div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Fri 11 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                🏛 <strong style="color:var(--frost);">10:00</strong> Didi→Harbin Opera House (¥25-35). <strong style="color:var(--frost);">10:30</strong> Architecture tour + riverside walk (1.5hr). 🍜 <strong style="color:var(--frost);">12:30</strong> Lunch: 东方饺子王 dumplings (¥50-70). 🎿 <strong style="color:var(--frost);">14:00</strong> Free afternoon — Songhua ice sledding (¥30-50) or last shopping. 🦆 <strong style="color:var(--frost);">17:30</strong> Farewell Peking duck (¥100-150). 🎶 <strong style="color:var(--frost);">19:30</strong> 松花江酒吧街 — live music, mulled wine.
-              </div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Sat 12 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                ☕ <strong style="color:var(--frost);">09:00</strong> Free morning — revisit spots, last souvenirs. 🍜 <strong style="color:var(--frost);">12:00</strong> Lunch (¥40-60). 🚕 <strong style="color:var(--frost);">13:00</strong> Didi→HRB airport hotel (¥50-80, 40min). 🏨 <strong style="color:var(--frost);">14:00</strong> Check in. 🍽 <strong style="color:var(--frost);">18:00</strong> Dinner at hotel (¥50-80).
-              </div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500; flex-shrink:0;">Sun 13 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">
-                ✈ <strong style="color:var(--frost);">12:00</strong> Check out. Lunch near airport. <strong style="color:var(--frost);">14:00</strong> HRB T2. <strong style="color:var(--frost);">16:00</strong> CZ3914→CAN (arr 21:05). <strong style="color:var(--frost);">22:40</strong> CZ8489→SIN. Re-check bags at CAN.
-              </div>
-            </div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
-            <span class="pill pill-blue" style="position:relative">🎣 Songhua ice fishing<span class="tooltip">Holes drilled in frozen river, heated tent, gear included. ¥100-150/pax. Book via hotel concierge. 2hr session, 10:00-12:00.</span></span>
-            <span class="pill pill-purple" style="position:relative">🎮 Sega Joypolis<span class="tooltip">Indoor arcade at 西城红场. VR rides, racing sims, claw machines, dance games. ¥200-300 all-day pass. Teens love it!</span></span>
-            <span class="pill pill-green" style="position:relative">❄ Ice &amp; Snow World<span class="tooltip">World's largest ice park. ★ Strongly recommended 14:00-20:00 (day→sunset→night lights transition). Entry ¥330 adult, ¥230 child. 11:00-22:00.</span></span>
-            <span class="pill pill-gold" style="position:relative">🚕 Didi costs<span class="tooltip">Harbin city rides: ¥15-40 per trip. Airport→city: ¥50-80. Book via Didi app (English interface).</span></span>
-            <span class="pill pill-blue" style="position:relative">⏱ Max 3hr rule<span class="tooltip">All activities capped at ~2-3hr except Ice &amp; Snow World (★ recommended 5hr for sunset transition — the highlight of any Harbin trip).</span></span>
-          </div>
-        </div>
+  <!-- HRB FAMILY ROUTES · refreshed 29 September 2026 -->
+  <section class="ext-accordion" id="hrbAccordion" aria-labelledby="hrbHeading">
+    <button type="button" class="ext-header hrb-toggle" aria-expanded="true" aria-controls="hrbBody" onclick="toggleHrb(this)">
+      <span class="section-title" id="hrbHeading" style="margin:0; flex:1;"><span class="section-icon">🗺</span> Post-BDH — Fly out from Harbin (HRB)</span><span class="open-tag" aria-hidden="true">▴</span>
+    </button>
+    <div class="ext-body open" id="hrbBody">
+      <div class="hrb-intro">
+        <div class="hrb-eyebrow">AFTER CLUB MED · JUST THE FOUR OF YOU</div>
+        <h3>Trade ski boots for<br>good food &amp; high scores.</h3>
+        <p>Ten alternative routes for <strong>David &amp; Joelle + teens aged 12 and 14</strong>. Think curious eating, arcade rematches, beer with dinner and warm-pool afternoons. Pick one route for the week; the others are alternatives.</p>
+        <div class="hrb-meta"><span>7–13 Dec 2026 · 7 days / 6 nights</span><span>2 adults + 2 teens</span><span>No skiing or snowboarding</span><span>Fly out: HRB · 13 Dec</span></div>
       </div>
-    </div>
-
-    <!-- OPTION 2 -->
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(83,74,183,0.3); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#c4b5fd; font-size:0.9rem; flex-shrink:0;">2</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Harbin Express</span>
-            <span style="font-size:0.68rem; background:rgba(83,74,183,0.25); color:#c4b5fd; border:1px solid rgba(83,74,183,0.35); border-radius:20px; padding:2px 8px;">Compact</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">5D4N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">~¥2,000–2,800/pax</span>
-          </div>
-          <div style="font-size:0.76rem; color:var(--text-muted-dark); margin-bottom:6px; font-style:italic;">Same highlights, fewer days — best for families with less time or who prefer spontaneous exploring</div>
-          <div style="display:flex; flex-direction:column; gap:4px;">
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">7 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🚐 08:00 BDH→Jilin (2hr). 🌫 10:30 Rime 雾凇. 🍜 12:30 Lunch: hot pot (¥60-80). 🚄 14:30 HSR→Harbin (1.5hr). 🚶 17:30 Central Street + Saint Sophia. 🍽 19:00 Dinner: 华梅西餐厅 (¥80-120). 🍺 20:30 Parents bar.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">8 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🎮 10:00 Didi→Sega Joypolis (¥20-30). 10:30 Arcade (2.5hr, ¥200-300). 🍱 13:00 Lunch (¥40-60). 🐯 14:30 Didi→Tiger Park (¥30-40). Bus safari (2hr, ¥95/¥50). 🍢 18:30 BBQ: 金刚山烧烤 (¥60-80). 🌃 Central Street night.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">9 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">❄ 14:00 Didi→Ice &amp; Snow World (¥25-35, ¥330/¥230). ★ Recommended 14:00-20:00 for day→night transition. 🔥 20:00 Hot pot: 大丽火锅 (¥80-120).</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">10 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">⛪ 09:00 Saint Sophia (45min). 🎁 10:00 Pop Mart / shopping (2hr). 🥟 13:00 Lunch (¥50-70). 🚕 14:00 Free afternoon. 🦆 17:30 Farewell Peking duck (¥100-150). 🎶 19:30 Bar street.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">11 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">☕ Free morning. 🚕 13:00 Didi→HRB airport hotel (¥50-80).</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">12-13</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">Buffer day + 13 Dec: HRB 16:00→CAN→SIN.</div>
-            </div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
-            <span class="pill pill-green" style="position:relative">⏱ Relaxed pace<span class="tooltip">Fewer scheduled activities. More free time for spontaneous exploration. Ideal for families who don't want a packed itinerary.</span></span>
-          </div>
-        </div>
+      <div class="hrb-picks">
+        <a class="hrb-pick" href="#hrb-route-1" onclick="showHrbRoute(1)"><small>BEST BALANCE · 01</small>Changchun + Harbin<br>Food, games &amp; a spa day</a>
+        <a class="hrb-pick" href="#hrb-route-7" onclick="showHrbRoute(7)"><small>FOOD ADVENTURE · 07</small>Yanji + Harbin<br>A different flavour of the Northeast</a>
+        <a class="hrb-pick" href="#hrb-route-4" onclick="showHrbRoute(4)"><small>RECOVERY MODE · 04</small>Harbin + Songbei<br>Bathrobes, pools &amp; downtime</a>
       </div>
-    </div>
-
-    <!-- OPTION 3 -->
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(26,74,46,0.4); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#6ee79a; font-size:0.9rem; flex-shrink:0;">3</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Jilin Rime + Harbin</span>
-            <span style="font-size:0.68rem; background:rgba(26,74,46,0.4); color:#6ee79a; border:1px solid rgba(26,106,64,0.4); border-radius:20px; padding:2px 8px;">Photography · Scenic</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">~¥2,200–3,200/pax</span>
-          </div>
-          <div style="font-size:0.76rem; color:var(--text-muted-dark); margin-bottom:6px; font-style:italic;">Extra night in Jilin for prime rime ice viewing + Wusong Island dawn — then full Harbin experience</div>
-          <div style="display:flex; flex-direction:column; gap:4px;">
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">7 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🚐 08:00 BDH→Jilin (2hr). 🌫 10:30 Rime walk (free, 1.5hr). 🍜 12:30 Lunch: 乌拉火锅 (¥60-80). 🚶 14:00 Explore Jilin city. 17:00 Evening rime at dusk. 🍽 19:00 Dinner in Jilin (¥60-80). Overnight Jilin.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">8 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🌅 06:00 Dawn rime at Wusong Island 雾凇岛 (¥60 ferry, 2.5hr). 🚣 09:30 Songhua drift boat (¥80-120, 45min). 🍜 12:00 Lunch (¥50-70). 🚄 14:00 HSR Jilin→Harbin (1.5hr, ¥100-140). 🚶 17:00 Central Street. 🍽 19:00 Dinner (¥80-120). 🍺 20:30 Parents bar.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">9 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">⛪ 09:00 Saint Sophia (45min). 🎮 10:30 Sega Joypolis (2.5hr, ¥200-300). 🍱 13:00 Lunch (¥40-60). 🐯 14:30 Tiger Park (2hr, ¥95/¥50). 🍢 18:30 BBQ (¥60-80). 🌃 Central Street night.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">10 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">❄ 14:00 Ice &amp; Snow World (★ 14:00-20:00). 🔥 20:00 Hot pot: 大丽火锅 (¥80-120). 🍸 21:00 Rooftop bar.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">11 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🐧 10:00 Polar Park (2.5hr, ¥160/¥80). 🎁 13:30 Pop Mart / last shopping. 🦆 17:30 Farewell duck (¥100-150). 🎶 19:30 Bar street.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">12-13</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">Free morning → HRB airport hotel → 13 Dec: 16:00→CAN→SIN.</div>
-            </div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
-            <span class="pill pill-blue" style="position:relative">🌫 Wusong Island<span class="tooltip">Best rime ice spot. Ferry ¥60. Dawn 06:00-08:00 is prime — river mist + ice crystals. Dress EXTRA warm.</span></span>
-            <span class="pill pill-gold" style="position:relative">🚣 Drift boat<span class="tooltip">Songhua River winter drift boat. ¥80-120/pax. 45min through rime-covered river. Unique photo opp.</span></span>
-          </div>
-        </div>
+      <div class="hrb-note"><p><strong>Early December changes the plan.</strong> Ice &amp; Snow World’s outdoor park opened on 17 December last season, after your dates. Its December 2026 opening is unconfirmed here, so none of these routes depends on it. River-ice activities and guaranteed rime are also excluded. <a href="https://www.hlj.gov.cn/hlj/c111004bn/202512/c00_31896741.shtml" target="_blank" rel="noopener noreferrer">Previous winter opening: 17 December 2025 · Heilongjiang government ↗</a></p></div>
+      <div class="hrb-filters" role="group" aria-label="Filter Harbin route options">
+<button type="button" data-hrb-filter="all" aria-pressed="true" onclick="filterHrb('all')">All 10</button>
+<button type="button" data-hrb-filter="classic" aria-pressed="false" onclick="filterHrb('classic')">Tried & tested</button>
+<button type="button" data-hrb-filter="games" aria-pressed="false" onclick="filterHrb('games')">Games first</button>
+<button type="button" data-hrb-filter="spa" aria-pressed="false" onclick="filterHrb('spa')">Spa first</button>
+<button type="button" data-hrb-filter="quiet" aria-pressed="false" onclick="filterHrb('quiet')">Quieter pace</button>
+<button type="button" data-hrb-filter="food" aria-pressed="false" onclick="filterHrb('food')">Food adventure</button>
+<button type="button" data-hrb-filter="unusual" aria-pressed="false" onclick="filterHrb('unusual')">Off the usual route</button>
+</div><p class="hrb-count" id="hrbCount" role="status" aria-live="polite">Showing all 10 routes · open any card for places, daily flow and sources</p><div class="hrb-grid">
+<article class="hrb-card" id="hrb-route-1" data-kind="classic">
+      <div class="hrb-card-top"><span class="hrb-number">01 <span aria-hidden="true">⛰</span></span><span class="hrb-badge">Our best overall fit</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">CHANGCHUN → HARBIN</div><h3>The indoor mountain &amp; city escape</h3><p>A snack-filled mountain inside a mall, then games, old-town eats and a proper spa day. The best balance of novelty and easy travel.</p>
+      <div class="hrb-nights">7–8 Dec Changchun · 9–12 Dec Harbin</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Novel food stops + a dedicated Harbin arcade afternoon.</p><p><strong>For the adults</strong> · A relaxed food crawl, Modern brewpub and one bathhouse day.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>这有山 · This Hill, Changchun</h4><p>An indoor hillside of winding steps, little shops and places to eat. Give everyone a snack budget and explore for 2–3 hours; it is a playful food-and-shopping experience, with plenty of stairs.</p></div>
+<div class="hrb-stop"><h4>桂林路 / 桂林胡同 · Guilin Road</h4><p>A lively snack district for grilled squid, crispy pork, drinks and dessert. Pick a few small portions to share; in December, use indoor restaurants between short street-food stops.</p></div>
+<div class="hrb-stop"><h4>Harbin play + soak</h4><p>Use the Haxi arcade and Galaxy bathhouse picks below on separate days, with an early Modern brewpub dinner in between.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · Transfer from Club Med to Changchun; hotel, then This Hill.</li><li>8 · Lazy morning; Guilin Road lunch and Hongqi Street browsing.</li><li>9 · Train to Harbin; check in, Central Street and brewpub dinner.</li><li>10 · Haxi Wanda arcade afternoon and hot-pot dinner.</li><li>11 · Galaxy bathhouse / indoor water-park day.</li><li>12 · Chinese Baroque pastries, favourite-food encore and packing.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Arrange one family-sized transfer from BDH to Changchun. Continue by train to Harbin on 9 Dec; allow half a day door to door and choose the actual stations before booking.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Popular, not a hidden gem. Visit This Hill before the evening peak if arrival allows, and Guilin Road before the dinner rush.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>One hotel change; excellent variety without a big geographical detour.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://news.cnr.cn/local/dftj/20230430/t20230430_526237122.shtml" target="_blank" rel="noopener noreferrer">Changchun food districts · CNR ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://you.ctrip.com/sight/harbin151/142254713.html" target="_blank" rel="noopener noreferrer">Galaxy water park &amp; bathhouse · Ctrip ↗</a><a href="https://www.madieer.cn/" target="_blank" rel="noopener noreferrer">Modern Hotel brewpub · official ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-2" data-kind="classic">
+      <div class="hrb-card-top"><span class="hrb-number">02 <span aria-hidden="true">🍦</span></span><span class="hrb-badge">Tried &amp; tested</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">HARBIN · ONE BASE</div><h3>Harbin, with the good bits turned up</h3><p>The postcard city, done around good meals and indoor breaks rather than a checklist of winter attractions.</p>
+      <div class="hrb-nights">7–12 Dec Harbin · 6 nights</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Ice cream, an arcade session and pastry souvenirs.</p><p><strong>For the adults</strong> · Historic streets, a proper beer-and-food stop and hot springs.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>中央大街 + 圣索菲亚教堂 · Central Street &amp; Saint Sophia</h4><p>Short walks between European-style façades, the cathedral exterior and warm café stops. Aim for a 60–90-minute wander rather than hours outdoors; this is the busiest, most familiar Harbin choice.</p></div>
+<div class="hrb-stop"><h4>马迭尔精酿啤酒屋 · Modern brewpub</h4><p>A brewery-style restaurant in the Modern Hotel on Central Street, with German-style dishes and house beer. Adults can taste beer while everyone shares dinner; confirm that the early dining session admits teens.</p></div>
+<div class="hrb-stop"><h4>老鼎丰 · Lao Ding Feng, Jingyu Street</h4><p>A historic pastry shop with a small pastry museum. Buy a tasting selection to share and compare favourites; a fun, warm stop that makes the old-town walk more than a photo exercise.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · BDH → Harbin; settle in and eat close to the hotel.</li><li>8 · Saint Sophia exterior, Central Street and early brewpub dinner.</li><li>9 · Haxi Wanda games and a shared hot-pot dinner.</li><li>10 · Chinese Baroque neighbourhood and Lao Ding Feng.</li><li>11 · Maple Leaf hot springs; relaxed dinner after returning.</li><li>12 · Free choice: repeat the best food or games, then pack.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Transfer via Jilin or Changchun station, then train to Harbin; compare a private through-car quote if you prefer no station changes. Stay central for the full six nights.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Central Street gets busy. Visit before lunch; avoid scheduling every dinner on the pedestrian street.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Easiest first visit, but less adventurous than the regional detours.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://www.madieer.cn/" target="_blank" rel="noopener noreferrer">Modern Hotel brewpub · official ↗</a><a href="https://www.hlj.gov.cn/hlj/c108553/202604/c00_31932225.shtml" target="_blank" rel="noopener noreferrer">Chinese Baroque &amp; Lao Ding Feng · Heilongjiang government ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://you.ctrip.com/sight/harbin151/5079350.html" target="_blank" rel="noopener noreferrer">Maple Leaf hot springs · Ctrip ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-3" data-kind="games">
+      <div class="hrb-card-top"><span class="hrb-number">03 <span aria-hidden="true">🎮</span></span><span class="hrb-badge">Teens get the vote</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">HARBIN · HAXI + CITY</div><h3>Claw machines, snacks &amp; rematches</h3><p>A deliberately unhurried city week with two game sessions, plenty of browsing and room to return to the food everyone loved.</p>
+      <div class="hrb-nights">7–12 Dec Harbin · 6 nights</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Two arcade visits, flexible shopping and their own snack picks.</p><p><strong>For the adults</strong> · Shared restaurant dinners, one beer evening and a recovery day.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>大玩家（哈西万达店）· Dà Wán Jiā arcade</h4><p>A listed arcade on level 3 of Haxi Wanda, 168 Zhongxing Avenue. Plan 90–120 minutes per visit. Ask which claw, racing and rhythm machines are currently operating before loading credit; no specific machine or unlimited pass is assumed.</p></div>
+<div class="hrb-stop"><h4>哈西万达广场 · Haxi Wanda</h4><p>Keep lunch, bubble tea and shopping in the same mall as the games. Let each teen choose one food stop; use a family token budget so the claw-machine hunt stays fun.</p></div>
+<div class="hrb-stop"><h4>A grown-up finish</h4><p>Add the Modern brewpub for dinner one night and Galaxy for a separate daytime soak. This balances the games without sending the kids off alone while the adults drink.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · Reach Harbin and settle into one hotel.</li><li>8 · Haxi arcade: first round, mall lunch and shopping.</li><li>9 · Central Street dessert crawl; early brewpub dinner.</li><li>10 · Galaxy bathhouse and a quiet evening.</li><li>11 · Arcade rematch; teens choose dinner.</li><li>12 · Lao Ding Feng gifts or the favourite food stop; pack.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Haxi is convenient for the games; central Harbin is better for evening walks. Pick one hotel base and group outings by neighbourhood rather than moving hotels.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Try the arcade shortly after opening on a weekday. Quieter timing is a planning suggestion, not a crowd guarantee.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Best if the kids genuinely want downtime; fewer landmark visits. Arcade inventory needs a fresh check.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://www.madieer.cn/" target="_blank" rel="noopener noreferrer">Modern Hotel brewpub · official ↗</a><a href="https://you.ctrip.com/sight/harbin151/142254713.html" target="_blank" rel="noopener noreferrer">Galaxy water park &amp; bathhouse · Ctrip ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-4" data-kind="spa">
+      <div class="hrb-card-top"><span class="hrb-number">04 <span aria-hidden="true">♨</span></span><span class="hrb-badge">Best recovery week</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">HARBIN · SONGBEI + CITY</div><h3>Bathrobes, buffets &amp; hot pools</h3><p>Make the Northeast bathhouse experience the highlight: warm pools, lounging and a meal break, with one arcade day for balance.</p>
+      <div class="hrb-nights">7–10 Dec central Harbin · 11–12 Dec Songbei</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Indoor water play, generous downtime and a city arcade visit.</p><p><strong>For the adults</strong> · Two different kinds of spa day, with no rushed evening transfers.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>银河欢乐世界 · Galaxy Happy World</h4><p>An enormous leisure complex at 83 Shimao Avenue combining a water park, bathhouse, dining and rooms. Reserve half a day for indoor facilities. Water-park access, bathhouse access and meals may be sold separately; do not assume outdoor slides run in December.</p></div>
+<div class="hrb-stop"><h4>枫叶小镇温泉 · Maple Leaf hot springs</h4><p>A hot-spring resort beside the Maple Leaf outlets. Expect pools and slow lounging rather than a spa treatment automatically included in admission. Use indoor pools as the dependable plan and confirm which outdoor pools are operating.</p></div>
+<div class="hrb-stop"><h4>Central-city interlude</h4><p>Break up the soaking with Haxi games, a pastry stop and a food-led evening. Keep alcohol for after the spa, at dinner.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · Arrive and stay in central Harbin.</li><li>8 · Central Street food walk and Modern dinner.</li><li>9 · Haxi arcade and mall lunch.</li><li>10 · Chinese Baroque and an easy evening.</li><li>11 · Move to Songbei; Galaxy indoor leisure afternoon.</li><li>12 · Maple Leaf pools, early dinner and packing.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Only move to Songbei if using both complexes. They are separate venues, not one resort; arrange rides between them and prebook the airport transfer from your final hotel.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Spa complexes can be busy on weekends. Swap the spa days to weekdays if avoiding crowds matters more than reducing transfers.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Check teen admission, height-based ticketing, shared swimwear areas and separate bathing areas. Massage, scrubs and food packages need individual confirmation.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://you.ctrip.com/sight/harbin151/142254713.html" target="_blank" rel="noopener noreferrer">Galaxy water park &amp; bathhouse · Ctrip ↗</a><a href="https://you.ctrip.com/sight/harbin151/5079350.html" target="_blank" rel="noopener noreferrer">Maple Leaf hot springs · Ctrip ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-5" data-kind="quiet">
+      <div class="hrb-card-top"><span class="hrb-number">05 <span aria-hidden="true">🏮</span></span><span class="hrb-badge">A quieter approach</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">HARBIN · DAOWAI SLOW DAYS</div><h3>Old Harbin, one bite at a time</h3><p>Historic courtyards, pastry tasting and long lunches, with warm indoor days between walks. A slower alternative to chasing every headline attraction.</p>
+      <div class="hrb-nights">7–12 Dec Harbin · 6 nights</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · A snack-rating challenge, unusual architecture and an arcade break.</p><p><strong>For the adults</strong> · Unhurried meals, photographs, beer and a midweek soak.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>中华巴洛克 · Chinese Baroque quarter</h4><p>Old Daowai blends elaborate European-style street fronts with Chinese courtyard layouts. Wander a small cluster of lanes rather than trying to cover the whole district; allow 1–2 hours with a warm stop.</p></div>
+<div class="hrb-stop"><h4>靖宇街老鼎丰 · Jingyu Street pastry stop</h4><p>The heritage shop is a good anchor for a self-made tasting challenge. Choose a few pastries together, browse the little museum and take the winning flavour back to the hotel.</p></div>
+<div class="hrb-stop"><h4>Make the rhythm local</h4><p>Alternate short neighbourhood walks with sit-down meals, the Haxi arcade and a hot-spring day. The appeal is time to linger, rather than a new paid attraction every morning.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · BDH → Harbin; hotel and neighbourhood dinner.</li><li>8 · Chinese Baroque lanes and pastry tasting.</li><li>9 · Haxi arcade; teens choose the next meal.</li><li>10 · Maple Leaf hot springs.</li><li>11 · Central Street before lunch and Modern dinner.</li><li>12 · Return to favourite Daowai shops, buy gifts and pack.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Stay centrally and taxi or take the metro to Daowai; keep one hotel for six nights. Do short loops with an indoor café or restaurant at either end.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>The main Baroque streets are popular too. Weekday daytime and side lanes may feel calmer; this is an editorial estimate, not measured footfall.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Best for curious eaters and a relaxed pace; not six days of headline attractions.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://www.hlj.gov.cn/hlj/c108553/202604/c00_31932225.shtml" target="_blank" rel="noopener noreferrer">Chinese Baroque &amp; Lao Ding Feng · Heilongjiang government ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://you.ctrip.com/sight/harbin151/5079350.html" target="_blank" rel="noopener noreferrer">Maple Leaf hot springs · Ctrip ↗</a><a href="https://www.madieer.cn/" target="_blank" rel="noopener noreferrer">Modern Hotel brewpub · official ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-6" data-kind="quiet">
+      <div class="hrb-card-top"><span class="hrb-number">06 <span aria-hidden="true">☄</span></span><span class="hrb-badge">Easy local detour</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">JILIN CITY → HARBIN</div><h3>Meteorites &amp; Manchu hot pot</h3><p>A gentler first stop after Club Med: an enormous meteorite, a bubbling regional hot pot and a city that feels different from tourist Harbin.</p>
+      <div class="hrb-nights">7–8 Dec Jilin city · 9–12 Dec Harbin</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · A real space-rock story, a shared hot-pot meal and Harbin games.</p><p><strong>For the adults</strong> · A slower city stop, regional cooking and a later spa day.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>吉林市陨石博物馆 · Jilin Meteorite Museum</h4><p>Home to the famous Jilin No. 1 meteorite. A focused 60–90-minute visit gives the teens a concrete story to explore rather than a long general-history tour; check current opening and reservation arrangements.</p></div>
+<div class="hrb-stop"><h4>乌拉满族火锅 · Wula Manchu hot pot</h4><p>A regional communal hot-pot tradition. Make it the main sit-down meal and ask the restaurant to explain the broth and ingredients; agree on meats and spice level before ordering.</p></div>
+<div class="hrb-stop"><h4>Songhua riverside, as a short extra</h4><p>A daylight river walk is a pleasant change of scene. Treat rime as a weather-dependent bonus, never the reason for an early start or a guaranteed sight.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · Private car to Jilin city; check in and hot-pot dinner.</li><li>8 · Meteorite museum, lunch and a short riverside walk.</li><li>9 · Train to Harbin; central-city evening.</li><li>10 · Haxi games and Modern dinner.</li><li>11 · Galaxy bathhouse day.</li><li>12 · Chinese Baroque food stops and packing.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>BDH → Jilin city by reserved car; continue north by train on 9 Dec. Book the train only after checking the actual service and station transfer time.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>A less tourism-led city choice than central Harbin, though museums and good restaurants can still attract groups.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>A good fit for space-curious teens; weaker if they only want shopping and games.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://whhlyt.jl.gov.cn/ztzl/jlslyxlhxj/gdxl/jls/jls_424340/202507/t20250704_9273085.html" target="_blank" rel="noopener noreferrer">Jilin city routes · provincial tourism authority ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://you.ctrip.com/sight/harbin151/142254713.html" target="_blank" rel="noopener noreferrer">Galaxy water park &amp; bathhouse · Ctrip ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-7" data-kind="food">
+      <div class="hrb-card-top"><span class="hrb-number">07 <span aria-hidden="true">🥢</span></span><span class="hrb-badge">Best food adventure</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">YANJI → HARBIN</div><h3>Korean-Chinese food safari</h3><p>The biggest change of flavour: rice cakes, Korean-Chinese barbecue, food markets and café stops before a compact Harbin finish.</p>
+      <div class="hrb-nights">7–9 Dec Yanji · 10–12 Dec Harbin</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Snack hunting and visually different streets; a Harbin game session.</p><p><strong>For the adults</strong> · Barbecue with beer or rice wine, then a bathhouse back in Harbin.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>延吉西市场 · Yanji West Market</h4><p>A market for Korean-Chinese foods and regional products: browse rice cakes, kimchi and dried pollock, then buy small portions to share. Allow 1–2 hours rather than treating it as a full-day attraction.</p></div>
+<div class="hrb-stop"><h4>水上市场 · Water Market</h4><p>Known for breakfast foods such as soup rice and rice cakes. A July 2026 local report announced a move to a new site; use the current map listing and opening hours, not old blog pins or a fixed 5am plan.</p></div>
+<div class="hrb-stop"><h4>A barbecue-led evening</h4><p>Choose a Korean-Chinese grill restaurant for a shared meal; adults can ask for local rice wine, teens for soft drinks. Build in cafés and snack shops rather than depending on outdoor night markets in December.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · BDH → Jilin station → Yanji; easy dinner on arrival.</li><li>8 · West Market tasting, café break and barbecue dinner.</li><li>9 · Current Water Market site, relaxed browsing and a second favourite meal.</li><li>10 · Travel to Harbin; keep the evening unscheduled.</li><li>11 · Haxi arcade, central-city stroll and dinner.</li><li>12 · Galaxy bathhouse or a shorter pastry-and-shopping day; pack.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>This is an eastward detour. Compare train connections via Jilin / Changchun, reserve much of 7 and 10 Dec for travel, and keep three Harbin nights before the flight.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Yanji is a popular food destination, not a secret. Eat before peak times and skip a famous queue when nearby alternatives look good.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Worth the longer travel if food is the main event; less convenient for a spa-first holiday.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://whhlyt.jl.gov.cn/ztzl/jlslyxlhxj/gdxl/ybz/yjs/202506/t20250625_9264370.html" target="_blank" rel="noopener noreferrer">Yanji markets &amp; food routes · provincial tourism authority ↗</a><a href="https://www.ybrbnews.cn/content/2026-07/17/142_779277.html" target="_blank" rel="noopener noreferrer">Water Market relocation, July 2026 · Yanbian News ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://you.ctrip.com/sight/harbin151/142254713.html" target="_blank" rel="noopener noreferrer">Galaxy water park &amp; bathhouse · Ctrip ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-8" data-kind="unusual">
+      <div class="hrb-card-top"><span class="hrb-number">08 <span aria-hidden="true">🔥</span></span><span class="hrb-badge">Off the usual route</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">HARBIN → QIQIHAR → HARBIN</div><h3>The barbecue-capital detour</h3><p>An extra train journey for a genuinely different food experience: Qiqihar-style beef barbecue and an optional forest hot-spring visit.</p>
+      <div class="hrb-nights">7–8 Dec Harbin · 9–10 Dec Qiqihar · 11–12 Dec Harbin</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Table-grilled beef, a short museum visit and games in Harbin.</p><p><strong>For the adults</strong> · Barbecue-and-beer dinners plus an optional pool afternoon.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>齐齐哈尔烤肉 · Qiqihar-style barbecue</h4><p>The city is known for its beef-barbecue culture. Make a shared grill dinner the centrepiece and compare cuts, marinades and dipping seasonings; adults can pair it with beer.</p></div>
+<div class="hrb-stop"><h4>齐齐哈尔市博物馆 · City Museum</h4><p>A compact change of pace exploring the city and Nenjiang region. Limit the visit to the family’s interest level; it gives context to a food-led detour without filling the day with museums.</p></div>
+<div class="hrb-stop"><h4>水师森林温泉 · Shuishi Forest hot springs</h4><p>A resort outside the centre with hot springs and leisure facilities. Use it as an optional half-day outing with a booked return car; confirm the indoor winter offering and meal package.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · Arrive Harbin; settle in.</li><li>8 · Haxi games and central-city food.</li><li>9 · Train to Qiqihar; hotel and barbecue dinner.</li><li>10 · Choose Shuishi pools OR the city museum and a second grill meal.</li><li>11 · Return to Harbin; relaxed old-town afternoon.</li><li>12 · Flexible favourites and packing.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Use a Harbin round trip by train; select Qiqihar / Qiqihar South according to the service and hotel location. Do not plan the regional return on flight day.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Less standard for international family itineraries, but a well-known domestic food city. Restaurant queues remain possible.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Two hotel moves; choose this for barbecue enthusiasm, not just to add another city.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://wlt.hlj.gov.cn/wlt/c114172/202508/c00_31863860.shtml" target="_blank" rel="noopener noreferrer">Qiqihar food &amp; museums · Heilongjiang tourism authority ↗</a><a href="https://zhuanti.mct.gov.cn/mmyghcyt2023/dcxc/detail/5069.html" target="_blank" rel="noopener noreferrer">Shuishi hot springs · national tourism route ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-9" data-kind="unusual">
+      <div class="hrb-card-top"><span class="hrb-number">09 <span aria-hidden="true">🦣</span></span><span class="hrb-badge">Most unusual pick</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">HARBIN → DAQING REGION → HARBIN</div><h3>Mammoths &amp; lakeside hot springs</h3><p>A fossil museum and a rural hot-spring stay: the most offbeat option, best for a family happy to trade shopping time for something unfamiliar.</p>
+      <div class="hrb-nights">7–8 Dec Harbin · 9–10 Dec Daqing region · 11–12 Dec Harbin</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Mammoth skeletons and pool time, with arcade time in Harbin.</p><p><strong>For the adults</strong> · A restful hot-spring stay and quieter evenings.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>大庆博物馆 · Daqing Museum</h4><p>A specialist collection of mammoth and woolly-rhino fossils. Plan 1.5–2 hours for the big skeletons and Ice Age story; this is the strongest reason to include Daqing for curious teens.</p></div>
+<div class="hrb-stop"><h4>连环湖温泉 · Lianhuan Lake hot springs</h4><p>A lakeside resort in Dorbod county, outside Daqing city. The operator describes indoor and outdoor pools, including winter pools. Base the stay around bathing and rest; confirm the pools running on your dates.</p></div>
+<div class="hrb-stop"><h4>Keep the food plan simple</h4><p>Have the hotel arrange an on-site regional dinner and confirm its current menu. This is a quiet spa detour, not a researched nightlife or gourmet-restaurant destination.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · Arrive Harbin; settle in.</li><li>8 · Haxi arcade and Modern dinner.</li><li>9 · Train to Daqing; museum, then a prebooked car to the resort.</li><li>10 · Hot-spring day and a slow on-site dinner.</li><li>11 · Car to the chosen station, then train to Harbin.</li><li>12 · Central Street or Chinese Baroque snacks; pack.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>Daqing city and Lianhuan Lake are not the same stop. Get a written car quote for station → museum → resort and the return before committing; reserve most of each transfer day.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>A more unusual regional choice, but weekend resort groups are possible. The proposed spa day falls on Thursday.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Most transport coordination and fewer teen shops. Only choose it if the museum and hot springs are genuinely appealing.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://www.dqsbwg.org.cn/index/know/index.html" target="_blank" rel="noopener noreferrer">Daqing Museum · official ↗</a><a href="https://lhhwqjq.com/index.php?lanmu=16&amp;p=about_wenquanjieshao" target="_blank" rel="noopener noreferrer">Lianhuan Lake hot springs · official ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a></div></details></div></article>
+<article class="hrb-card" id="hrb-route-10" data-kind="food">
+      <div class="hrb-card-top"><span class="hrb-number">10 <span aria-hidden="true">🍢</span></span><span class="hrb-badge">For energetic food explorers</span></div>
+      <div class="hrb-card-content"><div class="hrb-city">SHENYANG → HARBIN</div><h3>Big-city Korean grills &amp; snack streets</h3><p>A larger-city food detour with Korean grills, heritage shopping streets and plentiful warm meal stops before the Harbin finale.</p>
+      <div class="hrb-nights">7–9 Dec Shenyang · 10–12 Dec Harbin</div>
+      <div class="hrb-fit"><p><strong>For the teens</strong> · Korean snacks, rice cakes and shopping; Harbin arcade time.</p><p><strong>For the adults</strong> · Grill-and-beer dinners and a bathhouse day to finish.</p></div>
+      <details><summary>Explore places &amp; the 6-night plan</summary>
+    <div class="hrb-stop"><h4>西塔 · Xita Korean quarter</h4><p>A Korean-Chinese neighbourhood full of restaurants and food shops. Browse rice cakes and kimchi, then sit down for a grill meal; come hungry and share instead of ordering a full meal at every stop.</p></div>
+<div class="hrb-stop"><h4>三千里烤肉 / 师任堂 · Food leads to check</h4><p>Local reporting names Sanqianli for barbecue and Shirentang among Xita’s established food businesses. Use these as leads for a current menu-and-branch check, not as guaranteed reservations; choose an early dinner with teen-friendly seating.</p></div>
+<div class="hrb-stop"><h4>中街 + 老北市 · Zhongjie &amp; Laobeishi</h4><p>Pair central shopping streets with a short heritage-quarter wander. Keep outdoor time modest and make indoor shops and restaurants the anchors; do not assume a particular December performance schedule.</p></div>
+<div class="hrb-detail"><h4>A suggested flow · December 2026</h4><ol class="hrb-days"><li>7 · BDH → rail connection → Shenyang; simple arrival dinner.</li><li>8 · Xita snack crawl, café break and Korean grill dinner.</li><li>9 · Zhongjie shopping and a short Laobeishi visit.</li><li>10 · Train to Harbin; hotel and quiet dinner.</li><li>11 · Haxi arcade and central-city evening.</li><li>12 · Galaxy bathhouse or old-town food stops; pack.</li><li><strong>13 · Flight day.</strong> Breakfast, hotel checkout and prebooked transfer to HRB. See the shared departure plan below.</li></ol></div><div class="hrb-detail"><h4>Getting around</h4><p>This is a southward detour before returning north. Compare rail connections through Changchun and treat 7 and 10 Dec as travel days; this is the highest-effort city option.</p></div><div class="hrb-detail"><h4>Crowds & timing</h4><p>Xita and the central shopping streets are busy destinations. This is about food variety, not escaping crowds.</p></div><div class="hrb-detail"><h4>The trade-off</h4><p>Choose instead of Yanji, not in addition to it. For a calmer week, pick Changchun or stay in Harbin.</p></div><div class="hrb-sources"><strong>Chinese-language research</strong><a href="https://you.ctrip.com/sight/shenyang155/38333319.html" target="_blank" rel="noopener noreferrer">Xita Korean food quarter · Ctrip ↗</a><a href="https://epaper.lnd.com.cn/lswbepaper/pc/att/202304/04/545b0fb3-bb34-4ae6-a22b-ddb4eb30102f.pdf" target="_blank" rel="noopener noreferrer">Xita restaurants &amp; Laobeishi · Liaoshen Evening News ↗</a><a href="https://you.ctrip.com/sight/harbin151/143692638.html" target="_blank" rel="noopener noreferrer">Dà Wán Jiā, Haxi Wanda · Ctrip listing ↗</a><a href="https://you.ctrip.com/sight/harbin151/142254713.html" target="_blank" rel="noopener noreferrer">Galaxy water park &amp; bathhouse · Ctrip ↗</a></div></details></div></article>
+</div>
+      <div class="hrb-practical">
+        <h3>The details that make this work for four</h3>
+        <p><strong>Departure day · Sunday 13 December.</strong> Your existing itinerary lists CZ3914 departing HRB at 16:00. Aim to reach the airport around 13:00, subject to the airline’s current check-in guidance. Have the hotel set pickup time with winter-road margin; do not combine a regional train journey with the flight. Reconfirm the terminal, connection and baggage arrangements from the ticket. All ten options keep the final night in Harbin.</p>
+        <p><strong>Family transport.</strong> For Club Med and airport transfers, book a vehicle that fits four passengers plus all four people’s winter luggage, usually a suitably sized MPV. Train timetables and December fares have not been confirmed; the daily flows are planning suggestions, not booked departures.</p>
+        <p><strong>Games &amp; claw machines.</strong> Dà Wán Jiā at Haxi Wanda is the verified venue lead; its current machine mix still needs a phone or recent-review check. Set a token budget before playing. A listing is not proof that every machine will be available in December.</p>
+        <p><strong>Spa expectations.</strong> Choose daytime family use. Ask about swimwear-required shared pools, gender-separated bathing areas, teen admission and height-based prices. Confirm whether towels, meals, massage and scrubs are included. Plan adults’ treatments in turns unless there is a suitable supervised teen activity.</p>
+        <p><strong>Food &amp; drinks.</strong> The drinking suggestions are early restaurant dinners with food for everyone. Confirm family seating at brewpubs before going; alcohol is for the adults. For each regional city, pick current restaurant branches using recent Chinese reviews rather than travelling for an old viral post.</p>
+        <p><strong>Practical spending.</strong> No unverified per-person package totals are carried over. Ask for a whole-family quote for six hotel nights, transfers, train tickets, meals and activities. Teen discounts vary by age, height and ID; budget conservatively until the venue confirms them.</p>
       </div>
+      <details class="hrb-practical"><summary>Research notes &amp; useful Chinese search phrases</summary>
+        <p style="margin-top:12px;">Researched 29 September 2026 from Chinese tourism authorities, local reporting, operator sites and Ctrip listings/reviews. Route rankings and crowd-avoidance advice are our planning judgments. Rednote was not directly accessible in this session, so no recommendation is presented as a verified Rednote consensus. December opening hours, menus, tickets and rail services must be rechecked before booking.</p>
+        <p><strong>For a fresh Rednote / Dianping check:</strong> 哈尔滨 哈西万达 大玩家 抓娃娃 · 哈尔滨 银河欢乐世界 水汇 亲子 · 马迭尔精酿啤酒屋 菜单 · 长春 这有山 桂林路 美食 · 延吉 水上市场 新址 2026 · 齐齐哈尔 烤肉 本地人 · 大庆 连环湖温泉 冬季. Sort by newest, check the exact branch and prefer posts showing a recent menu or price board.</p>
+      </details>
     </div>
-
-    <!-- OPTION 4: YANJI + HARBIN (Korean experience) -->
-    <div style="background:rgba(120,80,160,0.06); border:2px solid rgba(120,80,160,0.35); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(201,146,58,0.2); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--gold-light); font-size:0.9rem; flex-shrink:0;">4</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Yanji Korean Experience 🌟</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">Korean culture</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">6D5N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">~¥2,500–3,500/pax</span>
-          </div>
-          <div style="font-size:0.76rem; color:var(--text-muted-dark); margin-bottom:6px; font-style:italic;">Korean BBQ + folk village + market street in Yanji, then Harbin highlights — unique cultural mix your teens will love</div>
-          <div style="display:flex; flex-direction:column; gap:4px;">
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">7 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🚐 08:00 BDH→Jilin (2hr). 🚄 10:30 HSR Jilin→Changchun (30min, ¥35-55). 🚄 11:30 HSR Changchun→Yanji (2.5hr, ¥120-180). 🥩 14:30 Arrive Yanji. 15:00 Korean BBQ lunch! (¥80-100/pax). 🚶 17:00 Yanji University street + night market (free, 2hr). 🍜 19:00 Dinner: Korean cold noodles 冷面 (¥40-60). Overnight Yanji.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">8 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🏘 09:00 Korean Folk Village 朝鲜族民俗村 (free, 1.5hr). 🥟 11:00 Morning market — try 打糕 rice cake + 米酒 (¥30-50). 🚄 13:00 HSR Yanji→Harbin (1.5hr, ¥120-160). 🏨 15:00 Check in. 🚶 17:00 Central Street. 🍽 19:00 Dinner: 华梅西餐厅 (¥80-120). 🍺 20:30 Parents bar.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">9 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🎣 10:00 Ice fishing on Songhua (2hr, ¥100-150). 🍜 12:30 Lunch: 老厨家 (¥50-70). ❄ 14:00 Ice &amp; Snow World (★ 14:00-20:00). 🔥 20:00 Hot pot (¥80-120).</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">10 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🎮 10:00 Sega Joypolis (2.5hr, ¥200-300). 🐯 14:00 Tiger Park (2hr, ¥95/¥50). 🍺 17:00 Beer Museum (1.5hr, ¥50). 🍢 18:30 BBQ (¥60-80). 🎶 20:00 Bar street.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">11 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">⛪ 09:00 Saint Sophia (45min). 🐧 10:00 Polar Park (2.5hr, ¥160/¥80). 🎁 14:00 Pop Mart / shopping. 🦆 17:30 Farewell duck (¥100-150).</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">12-13</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">Free morning → HRB airport hotel → 13 Dec: 16:00→CAN→SIN.</div>
-            </div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
-            <span class="pill pill-gold" style="position:relative">🥩 Yanji Korean BBQ<span class="tooltip">Yanji has the best Korean BBQ in China. Must-try: 烤肉 (grilled pork belly), 冷面 (cold noodles), 打糕 (rice cake), 米酒 (rice wine). Budget ¥80-100/pax for BBQ.</span></span>
-            <span class="pill pill-blue" style="position:relative">🚄 Changchun→Yanji HSR<span class="tooltip">~2.5hr, ¥120-180 2nd class. Scenic route through eastern Jilin. Book on Trip.com.</span></span>
-            <span class="pill pill-purple" style="position:relative">🏘 Korean Folk Village<span class="tooltip">朝鲜族民俗村 — free entry. Traditional Korean houses, cultural exhibits. 20 min from Yanji city by Didi (¥15-20). 1.5hr visit.</span></span>
-            <span class="pill pill-green" style="position:relative">⏱ Travel note<span class="tooltip">7 Dec involves ~5hr total HSR travel (Jilin→Changchun→Yanji). Break at Changchun station for snacks. Worth it for the unique Korean experience!</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- OPTION 5 -->
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(200,223,245,0.15); border-radius:var(--radius-md); overflow:hidden;">
-      <div style="padding:14px 18px; display:flex; align-items:flex-start; gap:14px;">
-        <div style="background:rgba(192,57,43,0.25); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-weight:600; color:#fca5a5; font-size:0.9rem; flex-shrink:0;">5</div>
-        <div style="flex:1;">
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; flex-wrap:wrap;">
-            <span style="font-weight:600; color:var(--snow-white); font-size:0.95rem;">Harbin Deep Dive</span>
-            <span style="font-size:0.68rem; background:rgba(37,99,168,0.3); color:#93c5fd; border:1px solid rgba(37,99,168,0.4); border-radius:20px; padding:2px 8px;">Comprehensive</span>
-            <span style="font-size:0.68rem; background:rgba(201,146,58,0.15); color:var(--gold-light); border:1px solid rgba(201,146,58,0.3); border-radius:20px; padding:2px 8px;">7D6N</span>
-            <span style="font-size:0.68rem; color:var(--text-muted-dark);">~¥3,500–4,500/pax</span>
-          </div>
-          <div style="font-size:0.76rem; color:var(--text-muted-dark); margin-bottom:6px; font-style:italic;">Full week — adds Volga Manor day trip + Poseidon Ocean Kingdom + everything from Option 1 at a relaxed pace</div>
-          <div style="display:flex; flex-direction:column; gap:4px;">
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">7 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🚐 BDH→Jilin. 🌫 Rime. 🚄 HSR→Harbin. 🚶 Central Street. Same as Option 1.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">8 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🎣 10:00 Ice fishing (2hr). ❄ 14:00 Ice &amp; Snow World (★ 14:00-20:00). 🔥 20:00 Hot pot.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">9 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🎮 10:00 Sega Joypolis (2.5hr). 🐯 14:00 Tiger Park (2hr). 🍺 17:00 Beer Museum (1.5hr). 🍢 18:30 BBQ. 🎶 Bar street.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">10 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">⛪ 09:00 Saint Sophia. 🐧 10:30 Polar Park (2.5hr). 🎁 14:00 Pop Mart. 🔥 18:00 Haidilao. 🍸 20:30 Rooftop bar.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">11 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🏰 <strong style="color:var(--frost);">Volga Manor 伏尔加庄园 day trip</strong> — Didi to rural Russian-themed park (1hr, ¥80-100). Entry ¥100. Russian architecture, performances, food (full day, 10:00-17:00). 🏆 Unique Harbin experience! 🚕 17:00 Return. 🦆 19:00 Peking duck farewell.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">12 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">🏛 <strong style="color:var(--frost);">Poseidon Ocean Kingdom 波塞冬海洋王国</strong> — Didi to indoor water park + aquarium + mythology shows (30min, ¥40-60). Entry ¥100-150. Full morning/early afternoon (10:00-14:00, ~4hr). 🌊 Indoor, heated, totally different from winter activities. Great for teens! 🚕 15:00 Return to hotel. 16:00 Didi→HRB airport hotel (¥50-80, 40min). 🏨 17:00 Check in. 🍽 18:00 Dinner.</div>
-            </div>
-            <div style="display:flex; gap:6px; align-items:flex-start;">
-              <span style="font-size:0.66rem; color:var(--gold-light); min-width:56px; font-weight:500;">13 Dec</span>
-              <div style="font-size:0.76rem; color:var(--text-muted-dark); line-height:1.65;">✈ HRB 16:00→CAN→SIN.</div>
-            </div>
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
-            <span class="pill pill-purple" style="position:relative">🏰 Volga Manor<span class="tooltip">伏尔加庄园 — Russian cultural park 1hr from Harbin. ¥100 entry. Stunning St. Nicholas Cathedral replica, art gallery, Russian food &amp; performances. Full-day trip. Book on Trip.com.</span></span>
-            <span class="pill pill-blue" style="position:relative">🌊 Poseidon Ocean Kingdom<span class="tooltip">波塞冬海洋王国 — indoor water park + aquarium + Greek mythology live shows. ¥100-150/pax. 30min Didi from Harbin. 10:00-17:00. Heated indoor — no winter gear needed! Great for teens.</span></span>
-            <span class="pill pill-gold" style="position:relative">📸 Most comprehensive<span class="tooltip">Covers all Harbin attractions + Volga Manor day trip + Poseidon Ocean Kingdom. Best for families wanting maximum experience.</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-    </div>
-  </div>
+  </section>
 
   <div class="ext-accordion" id="pekAccordion">
     <div class="ext-header" onclick="toggleExtended(this)">
@@ -2051,6 +1976,32 @@ function toggleExtended(header) {
     tag.textContent = '▴';
   }
 }
+
+// Scoped controls for the revised Harbin family routes.
+function toggleHrb(button) {
+  const expanded = button.getAttribute('aria-expanded') === 'true';
+  button.setAttribute('aria-expanded', String(!expanded));
+  document.getElementById('hrbBody').classList.toggle('open', !expanded);
+  button.querySelector('.open-tag').textContent = expanded ? '▾' : '▴';
+}
+function filterHrb(kind) {
+  const root = document.getElementById('hrbAccordion');
+  let count = 0;
+  root.querySelectorAll('.hrb-card').forEach(card => {
+    const show = kind === 'all' || card.dataset.kind === kind;
+    card.hidden = !show;
+    if (show) count++;
+  });
+  root.querySelectorAll('[data-hrb-filter]').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.hrbFilter === kind));
+  });
+  document.getElementById('hrbCount').textContent = 'Showing ' + count + ' of 10 routes · open a card for places, daily flow and sources';
+}
+function showHrbRoute(number) {
+  filterHrb('all');
+  document.querySelector('#hrb-route-' + number + ' details').open = true;
+}
+
 </script>
 </body>
 </html>
